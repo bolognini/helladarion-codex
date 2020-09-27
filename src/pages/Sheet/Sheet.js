@@ -1,13 +1,24 @@
 import React from "react"
+import { Indicator } from '@components/Indicator/Indicator'
+import { useSheet } from './Sheet.hooks'
 import { Container } from './Sheet.style'
 
-export default function Sheet() {
+const Sheet = () => {
+  useSheet()
+
   return (
     <Container>
-      <h1>Tormenta20 Bestiary</h1>
-      <p>A simplified monster builder for Tormenta20 RPG system</p>
-
-      <small>Coming soon... I hope.</small>
+      <div>
+        <h1 id='name' contentEditable>Verme do Gelo</h1>
+        <h2 id='description' contentEditable>
+          'Algo está devorando os mamutes. Nós seremos os próximos'. - Espírito-de-Pedra, xamã das Montanhas Uivantes
+        </h2>
+      </div>
+      <div>
+        <Indicator />
+      </div>
     </Container>
   )
 }
+
+export default Sheet
