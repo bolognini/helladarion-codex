@@ -1,22 +1,36 @@
 import React from "react"
-import { Indicator } from '@components/Indicator/Indicator'
+import { Attributes } from '@components/Attributes/Attributes'
+import { Separator } from '@assets'
 import { useSheet } from './Sheet.hooks'
-import { Container } from './Sheet.style'
+import { SHEET_DATA } from './Sheet.mock'
+import { Container, Perks, Stats, Name, SkillsWrapper, Skills, Misc } from './Sheet.style'
 
 const Sheet = () => {
   useSheet()
 
   return (
     <Container>
-      <div>
-        <h1 id='name' contentEditable>Verme do Gelo</h1>
-        <h2 id='description' contentEditable>
-          'Algo está devorando os mamutes. Nós seremos os próximos'. - Espírito-de-Pedra, xamã das Montanhas Uivantes
-        </h2>
-      </div>
-      <div>
-        <Indicator />
-      </div>
+      <Perks>
+        <Name>
+          <h1 id='name' contentEditable>{SHEET_DATA.name}</h1>
+          <Separator />
+          <h2 id='description' contentEditable>{SHEET_DATA.description}</h2>
+        </Name>
+        <SkillsWrapper>
+          <Skills>
+            <Attributes attributeList={SHEET_DATA.attributeList}/>
+            {/* <Abilities /> */}
+            {/* <Abilities /> */}
+          </Skills>
+          <Misc>
+            {/* <Loot /> */}
+            {/* <Notes /> */}
+          </Misc>
+        </SkillsWrapper>
+      </Perks>
+      <Stats>
+        {/* HP AND IMAGE */}
+      </Stats>
     </Container>
   )
 }

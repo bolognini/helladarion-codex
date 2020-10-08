@@ -49,8 +49,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Volkhov`,
-            variants: [`300`, `500`, `700`]
+            family: `Vollkorn SC`,
+            variants: [`400`, `600`, `700`, `900`]
           },
         ],
       },

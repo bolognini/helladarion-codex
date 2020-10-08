@@ -8,6 +8,7 @@ const Styles = createGlobalStyle`
     --grey: #F2F2F1;
     --dark-grey: #D1C9C3;
     --black: #383838;
+    --tormenta: 'Tormenta', sans-serif;
   }
 
   * {
@@ -16,7 +17,7 @@ const Styles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Tormenta', sans-serif;
+    font-family: 'Vollkorn SC', serif;
   }
 `
 
