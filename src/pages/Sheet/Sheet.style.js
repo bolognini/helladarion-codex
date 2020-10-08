@@ -27,6 +27,14 @@ export const Skills = styled.div`
 
 `
 
+export const AbilitiesWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 24px;
+  margin-top: 36px;
+  max-width: 660px;
+`
+
 export const Misc = styled.div`
 
 `

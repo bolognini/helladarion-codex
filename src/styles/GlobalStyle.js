@@ -18,6 +18,7 @@ const Styles = createGlobalStyle`
 
   body {
     font-family: 'Vollkorn SC', serif;
+    color: var(--black);
   }
 `
 

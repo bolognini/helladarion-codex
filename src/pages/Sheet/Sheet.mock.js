@@ -32,5 +32,88 @@ export const SHEET_DATA = {
       value: 8,
       modificator: -1
     }
+  ],
+  sensesList: [
+    {
+      name: 'Iniciativa +16',
+      rolling: 'D20 + 16'
+    },
+    {
+      name: 'Percepção +17',
+      rolling: 'D20 + 18'
+    },
+    {
+      name: 'Visão no Escuro',
+      rolling: ''
+    }
+  ],
+  resistanceList: [
+    {
+      name: 'Fortitude +14',
+      rolling: 'D20 + 20'
+    },
+    {
+      name: 'Reflexo +8',
+      rolling: 'D20 + 8'
+    },
+    {
+      name: 'Vontade +7',
+      rolling: 'D20 + 8'
+    },
+    {
+      name: 'Imunidade à frio',
+      rolling: ''
+    },
+    {
+      name: 'Vulnerabilidade à fogo',
+      rolling: ''
+    }
+  ],
+  attacksList: [
+    {
+      attackName: 'Mordida',
+      bonus: '1D3',
+      damage: '6D6',
+      critic: '',
+      type: 'Frio',
+      range: '',
+      test: 'Luta'
+    },
+    {
+      attackName: 'Baforada de Gelo',
+      bonus: '',
+      damage: '1D8',
+      critic: '',
+      type: 'Frio',
+      range: '',
+      test: 'Oposto'
+    },
+    {
+      attackName: 'Espasmo Mortal',
+      bonus: '',
+      damage: '',
+      critic: '',
+      type: '',
+      range: '18m',
+      test: 'Oposto'
+    },
+    {
+      attackName: 'Rugido Amendrontador',
+      bonus: '1D3',
+      damage: '6D6',
+      critic: '',
+      type: 'Frio',
+      range: '',
+      test: 'Oposto'
+    },
+    {
+      attackName: 'Arroto Gelado',
+      bonus: '1D3',
+      damage: '6D6',
+      critic: '',
+      type: 'Frio',
+      range: '',
+      test: 'Oposto'
+    }
   ]
 }
