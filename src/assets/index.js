@@ -1,10 +1,12 @@
-import Exclamation from './exclamation.svg'
-import ExclamationDot from './exclamation-dot.svg'
-import ExclamationOutside from './exclamation-outside-circle.svg'
-import ExclamationInside from './exclamation-inside-circle.svg'
-import Separator from './separator.svg'
-import ShortSeparatorTop from './short-separator-top.svg'
-import ShortSeparatorBottom from './short-separator-bottom.svg'
+import Exclamation from './exclamation.inline.svg'
+import ExclamationDot from './exclamation-dot.inline.svg'
+import ExclamationOutside from './exclamation-outside-circle.inline.svg'
+import ExclamationInside from './exclamation-inside-circle.inline.svg'
+import Separator from './separator.inline.svg'
+import ShortSeparatorTop from './short-separator-top.inline.svg'
+import ShortSeparatorBottom from './short-separator-bottom.inline.svg'
+import Loot from './loot.inline.svg'
+import Notes from './notes.inline.svg'
 
 export {
   Exclamation,
@@ -13,5 +15,7 @@ export {
   ExclamationInside,
   Separator,
   ShortSeparatorTop,
-  ShortSeparatorBottom
+  ShortSeparatorBottom,
+  Loot,
+  Notes,
 }

@@ -1,17 +1,17 @@
 import React from 'react'
 import { ShortSeparatorTop, ShortSeparatorBottom } from '@assets'
-import { useAbilities } from './Abilities.hooks'
+import { useShowAll } from '@hooks/useShowAll'
 import { Container, Box, Type, Ability, AllAbilities } from './Abilities.style'
 
 export const Abilities = ({ title, abilitiesList }) => {
-  const { hiddenAbilities } = useAbilities({ abilitiesList })
+  const { hiddenItems } = useShowAll({ list: abilitiesList, maxLength: 3 })
   return (
     <Container>
       <ShortSeparatorTop />
       <Box>
         <Type>
           <h2>{title}</h2>
-          <AllAbilities>{`${hiddenAbilities} ocultos | `}<em>ver todos</em></AllAbilities>
+          <AllAbilities>{`${hiddenItems} ocultos | `}<em>ver todos</em></AllAbilities>
         </Type>
         <Ability>
           {abilitiesList.map((ability, index) => {

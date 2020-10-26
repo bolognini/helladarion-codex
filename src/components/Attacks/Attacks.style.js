@@ -4,11 +4,13 @@ export const Container = styled.div`
   h2 {
     font-size: 24px;
     color: var(--red);
+    padding: 16px 0;
   }
 `
 
 export const Table = styled.table`
   background-color: var(--red);
+  margin-bottom: 16px;
   color: var(--yellow);
   width: 100%;
 

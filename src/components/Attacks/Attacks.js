@@ -1,10 +1,10 @@
 import React from 'react'
 import { tableHeaders } from './constants'
-import { useAttacks } from './Attacks.hooks'
+import { useShowAll } from '@hooks/useShowAll'
 import { Container, Table, AllAttacks } from './Attacks.style'
 
 export const Attacks = ({ attacksList }) => {
-  const { hiddenAttacks } = useAttacks({ attacksList })
+  const { hiddenItems } = useShowAll({ list: attacksList, maxLength: 4 })
   return (
     <Container>
       <h2>Ataques</h2>
@@ -28,7 +28,7 @@ export const Attacks = ({ attacksList }) => {
             </tr>
           )})}
       </Table>
-      <AllAttacks>{`${hiddenAttacks} ocultos | `}<em>ver todos</em></AllAttacks>
+      <AllAttacks>{`${hiddenItems} ocultos | `}<em>ver todos</em></AllAttacks>
     </Container>
   )
 }

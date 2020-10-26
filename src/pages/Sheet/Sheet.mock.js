@@ -1,6 +1,10 @@
 export const SHEET_DATA = {
   name: 'Verme de Gelo',
   description: `'Algo está devorando os mamutes. Nós seremos os próximos'. - Espírito-de-Pedra, xamã das Montanhas Uivantes`,
+  level: '11',
+  defense: '25',
+  distance: '12',
+  healthpoints: 120,
   attributeList: [
     {
       attributeName: 'FOR',

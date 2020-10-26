@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.section`
   display: grid;
   grid-template-columns: 2fr 1fr;
+  grid-column-gap: 24px;
   background-color: var(--grey);
   height: 100vh;
   padding: 24px;
@@ -20,7 +21,8 @@ export const Name = styled.div`
 `
 
 export const SkillsWrapper = styled.div`
-  
+  display: flex;
+  justify-content: space-between;
 `
 
 export const Skills = styled.div`
@@ -36,7 +38,25 @@ export const AbilitiesWrapper = styled.div`
 `
 
 export const Misc = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
 
+export const IconWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  ${({ lootIcon }) => lootIcon && `
+    span {
+      margin-right: 6px;
+    }
+  `}
+
+  svg {
+    width: 100px;
+  }
 `
 
 export const Stats = styled.div`
