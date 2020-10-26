@@ -1,4 +1,5 @@
 const siteMetadata = require('./config/metadata')
+const path = require('path')
 
 module.exports = {
   siteMetadata,
@@ -6,32 +7,27 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-dynamic-routes`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-alias-imports`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
-      },
+        alias: {
+          "@pages": path.resolve(__dirname, 'src/pages/'),
+          "@utils": path.resolve(__dirname, 'src/utils/'),
+          "@components": path.resolve(__dirname, 'src/components/'),
+          "@hooks": path.resolve(__dirname, 'src/hooks/'),
+          "@styles": path.resolve(__dirname, 'src/styles/'),
+          "@fonts": path.resolve(__dirname, 'src/fonts/'),
+          "@assets": path.resolve(__dirname, 'src/assets/'),
+        },
+        extensions: []
+      }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-react-svg",
       options: {
-        name: `components`,
-        path: `${__dirname}/src/components/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `styles`,
-        path: `${__dirname}/src/styles/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `fonts`,
-        path: `${__dirname}/static/fonts/`,
-      },
+        rule: {
+          include: /\.inline\.svg$/
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-nprogress`,
@@ -54,8 +50,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Volkhov`,
-            variants: [`300`, `500`, `700`]
+            family: `Vollkorn SC`,
+            variants: [`400`, `600`, `700`, `900`]
           },
         ],
       },
