@@ -19,13 +19,13 @@ export const Attacks = ({ attacksList }) => {
           if (index > 3) return
           return (
             <tr>
-              <Editable as='td' id={`attackName-${index}`} text={attack.attackName} />
-              <Editable as='td' id={`attackBonus-${index}`} text={attack.bonus} />
-              <Editable as='td' id={`attackDamage-${index}`} text={attack.damage} />
-              <Editable as='td' id={`attackCritic-${index}`} text={attack.critic} />
-              <Editable as='td' id={`attackType-${index}`} text={attack.type} />
-              <Editable as='td' id={`attackRange-${index}`} text={attack.range} />
-              <Editable as='td' id={`attackTest-${index}`} text={attack.test} />
+              <Editable as='td' id={`attackName-${index}`} text={attack.attackName} maxLength={16} />
+              <Editable as='td' id={`attackBonus-${index}`} text={attack.bonus} maxLength={9} />
+              <Editable as='td' id={`attackDamage-${index}`} text={attack.damage} maxLength={9} />
+              <Editable as='td' id={`attackCritic-${index}`} text={attack.critic} maxLength={9} />
+              <Editable as='td' id={`attackType-${index}`} text={attack.type} maxLength={9} />
+              <Editable as='td' id={`attackRange-${index}`} text={attack.range} maxLength={9} />
+              <Editable as='td' id={`attackTest-${index}`} text={attack.test} maxLength={10} />
             </tr>
           )})}
       </Table>

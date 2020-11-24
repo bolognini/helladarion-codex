@@ -9,8 +9,18 @@ export const Attributes = ({ attributeList }) => {
         <Attribute>
           <AttName>{att.attributeName}</AttName>
           <Values>
-            <Editable as='span' id={`${att.attributeName}-value`} text={att.value}/>
-            <Editable as='span' id={`${att.attributeName}-modificator`} text={att.modificator}/>
+            <Editable
+              as='span'
+              id={`${att.attributeName}-value`}
+              text={att.value}
+              maxLength={2}
+            />
+            <Editable
+              as='span'
+              id={`${att.attributeName}-modificator`}
+              text={att.modificator}
+              maxLength={3}
+            />
           </Values>
         </Attribute>
       ))}

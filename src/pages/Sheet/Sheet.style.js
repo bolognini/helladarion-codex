@@ -23,9 +23,7 @@ export const Name = styled.div`
     font-size: 56px;
     font-family: var(--tormenta);
     color: var(--red);
-    max-width: 850px;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    max-width: 834px;
     white-space: nowrap;
   }
 `

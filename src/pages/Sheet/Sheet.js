@@ -20,9 +20,19 @@ const Sheet = () => {
     <Container>
       <Perks>
         <Name>
-          <Editable as='h1' id='name' text={SHEET_DATA.name} />
+          <Editable
+            as='h1'
+            id='name'
+            text={SHEET_DATA.name}
+            maxLength={25}
+          />
           <Separator />
-          <Editable as='h2' id='description' text={SHEET_DATA.description} />
+          <Editable
+            as='h2'
+            id='description'
+            text={SHEET_DATA.description}
+            maxLength={180}
+          />
         </Name>
         <SkillsWrapper>
           <Skills>

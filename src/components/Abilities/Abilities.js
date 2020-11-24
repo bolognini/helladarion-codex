@@ -19,8 +19,18 @@ export const Abilities = ({ title, abilitiesList }) => {
             if (index > 2) return
             return (
               <li>
-                <Editable as='span' id={`${title}-abilityName-${index}`} text={ability.name} />
-                <Editable as='span' id={`${title}-abilityRolling-${index}`} text={ability.rolling} />
+                <Editable
+                  as='span'
+                  id={`${title}-abilityName-${index}`}
+                  text={ability.name}
+                  maxLength={18}
+                />
+                <Editable
+                  as='span'
+                  id={`${title}-abilityRolling-${index}`}
+                  text={ability.rolling}
+                  maxLength={16}
+                />
               </li>
             )
           })}
