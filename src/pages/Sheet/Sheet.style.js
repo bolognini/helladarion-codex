@@ -1,12 +1,17 @@
 import styled from 'styled-components'
+import { breakpoint } from '@styles/GlobalStyle'
 
 export const Container = styled.section`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-column-gap: 24px;
+  grid-column-gap: 48px;
   background-color: var(--grey);
   height: 100vh;
   padding: 24px;
+
+  ${breakpoint.xlarge} {
+    padding: 80px 248px;
+  }
 `
 
 export const Perks = styled.div``
@@ -14,9 +19,13 @@ export const Perks = styled.div``
 export const Name = styled.div`
   margin-bottom: 36px;
   h1 {
-    font-size: 68px;
+    font-size: 56px;
     font-family: var(--tormenta);
     color: var(--red);
+    max-width: 850px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 `
 
@@ -38,9 +47,9 @@ export const AbilitiesWrapper = styled.div`
 `
 
 export const Misc = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  grid-gap: 48px;
 `
 
 export const IconWrapper = styled.div`

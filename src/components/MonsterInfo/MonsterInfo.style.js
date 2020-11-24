@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  place-items: center;
+  justify-items: start;
+  align-items: center;
   color: var(--red);
 `
 
@@ -31,6 +32,7 @@ export const Description = styled.span`
 
 export const Level = styled.div`
   font-size: 64px;
+  justify-self: end;
 
   span:first-child {
     font-size: 48px;

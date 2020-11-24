@@ -9,7 +9,7 @@ export const Attribute = styled.li`
   display: grid;
   grid-template-columns: 18px 1fr;
   border: 2px solid var(--red);
-  width: 97px;
+  width: 107px;
   height: 115px;
   justify-items: center;
 `
