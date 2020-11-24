@@ -18,6 +18,7 @@ export const Perks = styled.div``
 
 export const Name = styled.div`
   margin-bottom: 36px;
+
   h1 {
     font-size: 56px;
     font-family: var(--tormenta);

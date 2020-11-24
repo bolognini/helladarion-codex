@@ -1,6 +1,7 @@
 import React from 'react'
 import { ShortSeparatorTop, ShortSeparatorBottom } from '@assets'
 import { useShowAll } from '@hooks/useShowAll'
+import { Editable } from '@components/Editable/Editable'
 import { Container, Box, Type, Ability, AllAbilities } from './Abilities.style'
 
 export const Abilities = ({ title, abilitiesList }) => {
@@ -18,8 +19,8 @@ export const Abilities = ({ title, abilitiesList }) => {
             if (index > 2) return
             return (
               <li>
-                <span id={`${title}-abilityName-${index}`} contentEditable>{ability.name}</span>
-                <span id={`${title}-abilityRolling-${index}`} contentEditable>{ability.rolling}</span>
+                <Editable as='span' id={`${title}-abilityName-${index}`} text={ability.name} />
+                <Editable as='span' id={`${title}-abilityRolling-${index}`} text={ability.rolling} />
               </li>
             )
           })}

@@ -1,10 +1,13 @@
 import React from "react"
-import { Attributes } from '@components/Attributes/Attributes'
-import { Abilities } from '@components/Abilities/Abilities'
-import { Attacks } from '@components/Attacks/Attacks'
-import { MonsterInfo } from '@components/MonsterInfo/MonsterInfo'
-import { HealthPoints } from '@components/HealthPoints/HealthPoints'
-import { Mugshot } from '@components/Mugshot/Mugshot'
+import {
+  Abilities,
+  Attacks,
+  Attributes,
+  Editable,
+  HealthPoints,
+  MonsterInfo,
+  Mugshot
+} from '@components'
 import { Separator, Loot, Notes } from '@assets'
 import { useSheet } from './Sheet.hooks'
 import { SHEET_DATA } from './Sheet.mock'
@@ -17,9 +20,9 @@ const Sheet = () => {
     <Container>
       <Perks>
         <Name>
-          <h1 id='name' contentEditable>{SHEET_DATA.name}</h1>
+          <Editable as='h1' id='name' text={SHEET_DATA.name} />
           <Separator />
-          <h2 id='description' contentEditable>{SHEET_DATA.description}</h2>
+          <Editable as='h2' id='description' text={SHEET_DATA.description} />
         </Name>
         <SkillsWrapper>
           <Skills>
