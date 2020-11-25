@@ -18,13 +18,12 @@ export const Perks = styled.div``
 
 export const Name = styled.div`
   margin-bottom: 36px;
+
   h1 {
     font-size: 56px;
     font-family: var(--tormenta);
     color: var(--red);
-    max-width: 850px;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    max-width: 834px;
     white-space: nowrap;
   }
 `

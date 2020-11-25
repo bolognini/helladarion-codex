@@ -1,6 +1,7 @@
 import React from 'react'
 import { tableHeaders } from './constants'
 import { useShowAll } from '@hooks/useShowAll'
+import { Editable } from '@components/Editable/Editable'
 import { Container, Table, AllAttacks } from './Attacks.style'
 
 export const Attacks = ({ attacksList }) => {
@@ -18,13 +19,13 @@ export const Attacks = ({ attacksList }) => {
           if (index > 3) return
           return (
             <tr>
-              <td id={`attackName-${index}`} contentEditable>{attack.attackName}</td>
-              <td id={`attackBonus-${index}`} contentEditable>{attack.bonus}</td>
-              <td id={`attackDamage-${index}`} contentEditable>{attack.damage}</td>
-              <td id={`attackCritic-${index}`} contentEditable>{attack.critic}</td>
-              <td id={`attackType-${index}`} contentEditable>{attack.type}</td>
-              <td id={`attackRange-${index}`} contentEditable>{attack.range}</td>
-              <td id={`attackTest-${index}`} contentEditable>{attack.test}</td>
+              <Editable as='td' id={`attackName-${index}`} text={attack.attackName} maxLength={16} />
+              <Editable as='td' id={`attackBonus-${index}`} text={attack.bonus} maxLength={9} />
+              <Editable as='td' id={`attackDamage-${index}`} text={attack.damage} maxLength={9} />
+              <Editable as='td' id={`attackCritic-${index}`} text={attack.critic} maxLength={9} />
+              <Editable as='td' id={`attackType-${index}`} text={attack.type} maxLength={9} />
+              <Editable as='td' id={`attackRange-${index}`} text={attack.range} maxLength={9} />
+              <Editable as='td' id={`attackTest-${index}`} text={attack.test} maxLength={10} />
             </tr>
           )})}
       </Table>

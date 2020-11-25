@@ -17,10 +17,10 @@ export const onSaveEditable = () => {
   })
 }
 
-export const onManuallySaveEditable = () => {
+export const onManuallySaveEditable = (text) => {
   const editableElements = document.querySelectorAll('[contenteditable]')
 
   Array.from(editableElements).forEach(el => {
-    localStorage.setItem('sheetData-' + el.id, el.innerHTML)
+    localStorage.setItem('sheetData-' + el.id, text)
   })
 }

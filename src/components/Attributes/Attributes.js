@@ -1,4 +1,5 @@
 import React from 'react'
+import { Editable } from '@components/Editable/Editable'
 import { AttributeList, Attribute, AttName, Values } from './Attributes.style'
 
 export const Attributes = ({ attributeList }) => {
@@ -8,8 +9,18 @@ export const Attributes = ({ attributeList }) => {
         <Attribute>
           <AttName>{att.attributeName}</AttName>
           <Values>
-            <span id={`${att.attributeName}-value`} contentEditable>{att.value}</span>
-            <span id={`${att.attributeName}-modificator`} contentEditable>{att.modificator}</span>
+            <Editable
+              as='span'
+              id={`${att.attributeName}-value`}
+              text={att.value}
+              maxLength={2}
+            />
+            <Editable
+              as='span'
+              id={`${att.attributeName}-modificator`}
+              text={att.modificator}
+              maxLength={3}
+            />
           </Values>
         </Attribute>
       ))}
