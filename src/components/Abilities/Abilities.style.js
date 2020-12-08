@@ -24,6 +24,7 @@ export const AllAbilities = styled.span`
   
   em {
     color: var(--red);
+    cursor: pointer;
   }
 `
 

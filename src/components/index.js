@@ -6,6 +6,7 @@ import { HealthPoints } from './HealthPoints/HealthPoints'
 import { Indicator } from './Indicator/Indicator'
 import { MonsterInfo } from './MonsterInfo/MonsterInfo'
 import { Mugshot } from './Mugshot/Mugshot'
+import { Modal } from './Modal/Modal'
 
 export {
   Abilities,
@@ -15,5 +16,6 @@ export {
   HealthPoints,
   Indicator,
   MonsterInfo,
-  Mugshot
+  Mugshot,
+  Modal
 }

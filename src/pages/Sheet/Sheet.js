@@ -11,13 +11,18 @@ import {
 import { Separator, Loot, Notes } from '@assets'
 import { useSheet } from './Sheet.hooks'
 import { SHEET_DATA } from './Sheet.mock'
+import { useModal } from '@hooks/useModal'
 import { Container, Perks, Stats, Name, SkillsWrapper, Skills, AbilitiesWrapper, Misc, IconWrapper } from './Sheet.style'
 
 const Sheet = () => {
-  useSheet()
+  const { openModal, Modal } = useModal()
+  const { renderModal, setModalType } = useSheet()
 
   return (
     <Container>
+      <Modal>
+        {renderModal()}
+      </Modal>
       <Perks>
         <Name>
           <Editable
@@ -38,22 +43,48 @@ const Sheet = () => {
           <Skills>
             <Attributes attributeList={SHEET_DATA.attributeList}/>
             <AbilitiesWrapper>
-              <Abilities title='Sentidos' abilitiesList={SHEET_DATA.sensesList} />
-              <Abilities title='Resistências' abilitiesList={SHEET_DATA.resistanceList} />
+              <Abilities
+                title='Sentidos'
+                modalType='senses'
+                abilitiesList={SHEET_DATA.sensesList}
+                openModal={openModal}
+                setModalType={setModalType}
+              />
+              <Abilities
+                title='Resistências'
+                modalType='resistances'
+                abilitiesList={SHEET_DATA.resistanceList}
+                openModal={openModal}
+                setModalType={setModalType}
+              />
             </AbilitiesWrapper>
           </Skills>
           <Misc>
-            <IconWrapper lootIcon>
+            <IconWrapper
+              lootIcon
+              onClick={() => {
+                setModalType('loot')
+                openModal()
+              }}>
               <Loot />
               <span>Tesouro</span>
             </IconWrapper>
-            <IconWrapper>
+            <IconWrapper
+              onClick={() => {
+                setModalType('notes')
+                openModal()
+              }}
+            >
               <Notes />
               <span>Anotações</span>
             </IconWrapper>
           </Misc>
         </SkillsWrapper>
-        <Attacks attacksList={SHEET_DATA.attacksList}/>
+        <Attacks
+          attacksList={SHEET_DATA.attacksList}
+          openModal={openModal}
+          setModalType={setModalType}
+        />
       </Perks>
       <Stats>
         <MonsterInfo

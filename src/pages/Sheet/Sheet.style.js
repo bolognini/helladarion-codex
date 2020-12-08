@@ -55,6 +55,7 @@ export const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  cursor: pointer;
 
   ${({ lootIcon }) => lootIcon && `
     span {

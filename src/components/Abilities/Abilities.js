@@ -4,7 +4,13 @@ import { useShowAll } from '@hooks/useShowAll'
 import { Editable } from '@components/Editable/Editable'
 import { Container, Box, Type, Ability, AllAbilities } from './Abilities.style'
 
-export const Abilities = ({ title, abilitiesList }) => {
+export const Abilities = ({
+  title,
+  modalType,
+  abilitiesList,
+  setModalType,
+  openModal,
+}) => {
   const { hiddenItems } = useShowAll({ list: abilitiesList, maxLength: 3 })
   return (
     <Container>
@@ -12,13 +18,23 @@ export const Abilities = ({ title, abilitiesList }) => {
       <Box>
         <Type>
           <h2>{title}</h2>
-          <AllAbilities>{`${hiddenItems} ocultos | `}<em>ver todos</em></AllAbilities>
+          <AllAbilities>
+            {`${hiddenItems} ocultos | `}
+            <em
+              onClick={() => {
+                setModalType(modalType)
+                openModal()
+              }}
+            >
+              ver todos
+            </em>
+          </AllAbilities>
         </Type>
         <Ability>
           {abilitiesList.map((ability, index) => {
             if (index > 2) return
             return (
-              <li>
+              <li key={index}>
                 <Editable
                   as='span'
                   id={`${title}-abilityName-${index}`}
