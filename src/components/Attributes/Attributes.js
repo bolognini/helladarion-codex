@@ -5,8 +5,8 @@ import { AttributeList, Attribute, AttName, Values } from './Attributes.style'
 export const Attributes = ({ attributeList }) => {
   return (
     <AttributeList>
-      {attributeList.map(att => (
-        <Attribute>
+      {attributeList.map((att, index) => (
+        <Attribute key={index}>
           <AttName>{att.attributeName}</AttName>
           <Values>
             <Editable

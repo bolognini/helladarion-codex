@@ -31,5 +31,6 @@ export const AllAttacks = styled.span`
   
   em {
     color: var(--red);
+    cursor: pointer;
   }
 `
