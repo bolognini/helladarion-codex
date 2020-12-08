@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import defaultImage from '@assets/default.png'
+import defaultImage from 'assets/default.png'
 
 export const Container = styled.div`
   display: block;
@@ -9,5 +9,5 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   border: 6px solid var(--red);
-  background-image: ${({ image }) => image ? `url(${image})` : `url(${defaultImage})`};
+  background-image: ${({ image }) => (image ? `url(${image})` : `url(${defaultImage})`)};
 `

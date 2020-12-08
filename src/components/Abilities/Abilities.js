@@ -1,7 +1,7 @@
 import React from 'react'
-import { ShortSeparatorTop, ShortSeparatorBottom } from '@assets'
-import { useShowAll } from '@hooks/useShowAll'
-import { Editable } from '@components/Editable/Editable'
+import { ShortSeparatorTop, ShortSeparatorBottom } from 'assets'
+import { useShowAll } from 'hooks/useShowAll'
+import { Editable } from 'components/Editable/Editable'
 import { Container, Box, Type, Ability, AllAbilities } from './Abilities.style'
 
 export const Abilities = ({
@@ -9,7 +9,7 @@ export const Abilities = ({
   modalType,
   abilitiesList,
   setModalType,
-  openModal,
+  openModal
 }) => {
   const { hiddenItems } = useShowAll({ list: abilitiesList, maxLength: 3 })
   return (
@@ -21,6 +21,8 @@ export const Abilities = ({
           <AllAbilities>
             {`${hiddenItems} ocultos | `}
             <em
+              role='link'
+              tabIndex={0}
               onClick={() => {
                 setModalType(modalType)
                 openModal()

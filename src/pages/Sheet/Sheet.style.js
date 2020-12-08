@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoint } from '@styles/GlobalStyle'
+import { breakpoint } from 'styles/GlobalStyle'
 
 export const Container = styled.section`
   display: grid;
@@ -33,9 +33,7 @@ export const SkillsWrapper = styled.div`
   justify-content: space-between;
 `
 
-export const Skills = styled.div`
-
-`
+export const Skills = styled.div``
 
 export const AbilitiesWrapper = styled.div`
   display: grid;
@@ -68,6 +66,4 @@ export const IconWrapper = styled.div`
   }
 `
 
-export const Stats = styled.div`
-
-`
+export const Stats = styled.div``

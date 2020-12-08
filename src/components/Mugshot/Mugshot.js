@@ -1,8 +1,6 @@
 import React from 'react'
 import { Container } from './Mugshot.style'
 
-export const Mugshot = () => {
-  return (
-    <Container />
-  )
-}
+export const Mugshot = () => (
+  <Container />
+)

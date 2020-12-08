@@ -1,7 +1,7 @@
 import React from 'react'
+import { useShowAll } from 'hooks/useShowAll'
+import { Editable } from 'components/Editable/Editable'
 import { tableHeaders } from './constants'
-import { useShowAll } from '@hooks/useShowAll'
-import { Editable } from '@components/Editable/Editable'
 import { Container, Table, AllAttacks } from './Attacks.style'
 
 export const Attacks = ({ attacksList, setModalType, openModal }) => {
@@ -65,11 +65,14 @@ export const Attacks = ({ attacksList, setModalType, openModal }) => {
                   maxLength={10}
                 />
               </tr>
-            )})}
+            )
+          })}
         </tbody>
       </Table>
       <AllAttacks>{`${hiddenItems} ocultos | `}
         <em
+          role='link'
+          tabIndex={0}
           onClick={() => {
             setModalType('attacks')
             openModal()

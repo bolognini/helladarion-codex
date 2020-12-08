@@ -20,7 +20,8 @@ export const Table = styled.table`
     max-width: 120px;
   }
 
-  th, td {
+  th,
+  td {
     text-align: center;
     padding: 8px 0;
   }
@@ -28,7 +29,7 @@ export const Table = styled.table`
 
 export const AllAttacks = styled.span`
   font-size: 14px;
-  
+
   em {
     color: var(--red);
     cursor: pointer;

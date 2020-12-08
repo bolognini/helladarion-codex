@@ -1,10 +1,10 @@
 export const onLoadEditableElements = () => {
-  for (let key in localStorage) {
+  Object.keys(localStorage).forEach(key => {
     if (key.includes('sheetData-')) {
-      const id = key.replace('sheetData-','')
-      document.querySelector('#' + id).innerHTML = localStorage.getItem(key)
+      const id = key.replace('sheetData-', '')
+      document.querySelector(`#${id}`).innerHTML = localStorage.getItem(key)
     }
-  }
+  })
 }
 
 export const onSaveEditable = () => {
@@ -12,15 +12,15 @@ export const onSaveEditable = () => {
 
   editableElements.forEach(el => {
     el.addEventListener('keyup', () => {
-      localStorage.setItem('sheetData-' + el.id, el.innerHTML)
+      localStorage.setItem(`sheetData-${el.id}`, el.innerHTML)
     })
   })
 }
 
-export const onManuallySaveEditable = (text) => {
+export const onManuallySaveEditable = text => {
   const editableElements = document.querySelectorAll('[contenteditable]')
 
   Array.from(editableElements).forEach(el => {
-    localStorage.setItem('sheetData-' + el.id, text)
+    localStorage.setItem(`sheetData-${el.id}`, text)
   })
 }

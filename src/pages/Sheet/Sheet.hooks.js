@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { onLoadEditableElements, onSaveEditable } from '@utils'
+import { onLoadEditableElements, onSaveEditable } from 'utils'
 
 export const useSheet = () => {
   const [modalType, setModalType] = useState(null)
@@ -31,7 +31,6 @@ export const useSheet = () => {
           <div>Anotações Gerais</div>
         )
       default:
-        return
     }
   }
 

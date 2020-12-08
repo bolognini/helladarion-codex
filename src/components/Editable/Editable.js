@@ -14,7 +14,7 @@ export const Editable = ({ as: tag, text, id, maxLength }) => {
       ref={elementRef}
       onInput={onInput}
       contentEditable
-      suppressContentEditableWarning={true}
+      suppressContentEditableWarning
     >
       {text}
     </Element>
