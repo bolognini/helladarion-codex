@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 export const useCloseModal = (ref, onClose) => {
   useEffect(() => {
-    const listener = (event) => {
+    const listener = event => {
       if (!ref.current || ref.current.contains(event.target)) {
         return
       }

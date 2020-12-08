@@ -1,0 +1,50 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "moduleDirectory": ["node_modules", "src"]
+      }
+    }
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/prop-types": "off",
+    "react/no-array-index-key": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "object-curly-newline": ["off", "multi-line"],
+    "semi": ["error", "never"],
+    "max-len": ["error", 150, { "ignoreTemplateLiterals": true }],
+    "arrow-parens": ["error", "as-needed"],
+    "consistent-return": "off",
+    "import/prefer-default-export": "off",
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
+    "jsx-quotes": ["error", "prefer-single"],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "comma-dangle": ["error", "never"],
+    "react/jsx-one-expression-per-line": "off",
+    "global-require": "off",
+    "import/no-dynamic-require": "warn",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "react/jsx-props-no-spreading": ["warn", { "custom": "ignore" }]
+  }
+}

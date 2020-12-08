@@ -21,7 +21,7 @@ export const Type = styled.div`
 
 export const AllAbilities = styled.span`
   font-size: 14px;
-  
+
   em {
     color: var(--red);
     cursor: pointer;

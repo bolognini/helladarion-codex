@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const Container = styled.div`
   color: var(--red);
@@ -37,13 +37,13 @@ export const HealthBar = styled.progress`
     height: 18px;
   }
 
-   &[value]::-webkit-progress-bar {
-     background-color: var(--dark-grey);
-   }
+  &[value]::-webkit-progress-bar {
+    background-color: var(--dark-grey);
+  }
 
-   &[value]::-webkit-progress-value {
-     background-color: var(--red);
-   }
+  &[value]::-webkit-progress-value {
+    background-color: var(--red);
+  }
 `
 
 export const HealthControllers = styled.div`
@@ -59,7 +59,7 @@ export const HealthControllers = styled.div`
     background: var(--red);
     color: var(--yellow);
     font-size: 24px;
-    font-family: 'Vollkorn SC', serif;
+    font-family: "Vollkorn SC", serif;
     cursor: pointer;
     transition: 0.1s ease-in;
 

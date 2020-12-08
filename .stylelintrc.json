@@ -1,0 +1,17 @@
+{
+  "processors": ["stylelint-processor-styled-components"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-styled-components"
+  ],
+  "rules": {
+    "color-hex-case": "upper",
+    "value-keyword-case": ["lower", { "ignoreKeywords": ["dummyValue"] }],
+    "no-descending-specificity": null,
+    "selector-type-no-unknown": null,
+    "selector-descendant-combinator-no-non-space": null,
+    "declaration-colon-newline-after": null,
+    "declaration-empty-line-before": null,
+    "property-no-vendor-prefix": null
+  }
+}

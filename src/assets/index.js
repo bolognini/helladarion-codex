@@ -17,5 +17,5 @@ export {
   ShortSeparatorTop,
   ShortSeparatorBottom,
   Loot,
-  Notes,
+  Notes
 }

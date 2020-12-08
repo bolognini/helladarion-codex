@@ -22,11 +22,11 @@ export const HealthPoints = ({ healthpoints }) => {
       </PointsWrapper>
       <HealthBar value={currentHealth} max={healthpoints} />
       <HealthControllers>
-        <button onClick={removeTenPoints}>-10</button>
-        <button onClick={removeOnePoint}>-1</button>
-        <button>set</button>
-        <button onClick={addOnePoint}>+1</button>
-        <button onClick={addTenPoints}>+10</button>
+        <button type='button' onClick={removeTenPoints}>-10</button>
+        <button type='button' onClick={removeOnePoint}>-1</button>
+        <button type='button'>set</button>
+        <button type='button' onClick={addOnePoint}>+1</button>
+        <button type='button' onClick={addTenPoints}>+10</button>
       </HealthControllers>
     </Container>
   )

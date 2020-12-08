@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import {
   Abilities,
   Attacks,
@@ -7,11 +7,11 @@ import {
   HealthPoints,
   MonsterInfo,
   Mugshot
-} from '@components'
-import { Separator, Loot, Notes } from '@assets'
+} from 'components'
+import { Separator, Loot, Notes } from 'assets'
+import { useModal } from 'hooks/useModal'
 import { useSheet } from './Sheet.hooks'
 import { SHEET_DATA } from './Sheet.mock'
-import { useModal } from '@hooks/useModal'
 import { Container, Perks, Stats, Name, SkillsWrapper, Skills, AbilitiesWrapper, Misc, IconWrapper } from './Sheet.style'
 
 const Sheet = () => {
@@ -41,7 +41,7 @@ const Sheet = () => {
         </Name>
         <SkillsWrapper>
           <Skills>
-            <Attributes attributeList={SHEET_DATA.attributeList}/>
+            <Attributes attributeList={SHEET_DATA.attributeList} />
             <AbilitiesWrapper>
               <Abilities
                 title='Sentidos'
@@ -65,7 +65,8 @@ const Sheet = () => {
               onClick={() => {
                 setModalType('loot')
                 openModal()
-              }}>
+              }}
+            >
               <Loot />
               <span>Tesouro</span>
             </IconWrapper>
