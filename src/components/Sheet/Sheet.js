@@ -14,7 +14,7 @@ import { useSheet } from './Sheet.hooks'
 import { SHEET_DATA } from './Sheet.mock'
 import { Container, Perks, Stats, Name, SkillsWrapper, Skills, AbilitiesWrapper, Misc, IconWrapper } from './Sheet.style'
 
-const Sheet = () => {
+export const Sheet = () => {
   const { openModal, Modal } = useModal()
   const { renderModal, setModalType } = useSheet()
 
@@ -99,5 +99,3 @@ const Sheet = () => {
     </Container>
   )
 }
-
-export default Sheet
