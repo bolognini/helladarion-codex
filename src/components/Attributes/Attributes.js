@@ -4,19 +4,19 @@ import { AttributeList, Attribute, AttName, Values } from './Attributes.style'
 
 export const Attributes = ({ attributeList }) => (
   <AttributeList>
-    {attributeList.map((att, index) => (
+    {attributeList && attributeList.map((att, index) => (
       <Attribute key={index}>
-        <AttName>{att.attributeName}</AttName>
+        <AttName>{att.name}</AttName>
         <Values>
           <Editable
             as='span'
-            id={`${att.attributeName}-value`}
+            id={`${att.name}-value`}
             text={att.value}
             maxLength={2}
           />
           <Editable
             as='span'
-            id={`${att.attributeName}-modificator`}
+            id={`${att.name}-modificator`}
             text={att.modificator}
             maxLength={3}
           />

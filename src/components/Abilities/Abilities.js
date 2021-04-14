@@ -33,7 +33,7 @@ export const Abilities = ({
           </AllAbilities>
         </Type>
         <Ability>
-          {abilitiesList.map((ability, index) => {
+          {abilitiesList && abilitiesList.map((ability, index) => {
             if (index > 2) return
             return (
               <li key={index}>

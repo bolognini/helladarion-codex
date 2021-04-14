@@ -5,39 +5,39 @@ export const SHEET_DATA = {
   defense: '25',
   distance: '12',
   healthpoints: 120,
-  attributeList: [
+  attributes: [
     {
-      attributeName: 'FOR',
+      name: 'FOR',
       value: 30,
       modificator: 9
     },
     {
-      attributeName: 'DES',
+      name: 'DES',
       value: 10,
       modificator: 0
     },
     {
-      attributeName: 'CON',
+      name: 'CON',
       value: 22,
       modificator: 6
     },
     {
-      attributeName: 'INT',
+      name: 'INT',
       value: 2,
       modificator: -4
     },
     {
-      attributeName: 'SAB',
+      name: 'SAB',
       value: 12,
       modificator: 1
     },
     {
-      attributeName: 'CAR',
+      name: 'CAR',
       value: 8,
       modificator: -1
     }
   ],
-  sensesList: [
+  senses: [
     {
       name: 'Iniciativa +16',
       rolling: 'D20 + 16'
@@ -51,7 +51,7 @@ export const SHEET_DATA = {
       rolling: ''
     }
   ],
-  resistanceList: [
+  resistances: [
     {
       name: 'Fortitude +14',
       rolling: 'D20 + 20'
@@ -73,13 +73,13 @@ export const SHEET_DATA = {
       rolling: ''
     }
   ],
-  attacksList: [
+  attacks: [
     {
       attackName: 'Mordida',
       bonus: '1D3',
       damage: '6D6',
       critic: '',
-      type: 'Frio',
+      attType: 'Frio',
       range: '',
       test: 'Luta'
     },
@@ -88,7 +88,7 @@ export const SHEET_DATA = {
       bonus: '',
       damage: '1D8',
       critic: '',
-      type: 'Frio',
+      attType: 'Frio',
       range: '',
       test: 'Oposto'
     },
@@ -97,7 +97,7 @@ export const SHEET_DATA = {
       bonus: '',
       damage: '',
       critic: '',
-      type: '',
+      attType: '',
       range: '18m',
       test: 'Oposto'
     },
@@ -106,7 +106,7 @@ export const SHEET_DATA = {
       bonus: '1D3',
       damage: '6D6',
       critic: '',
-      type: 'Frio',
+      attType: 'Frio',
       range: '',
       test: 'Oposto'
     },
@@ -115,7 +115,7 @@ export const SHEET_DATA = {
       bonus: '1D3',
       damage: '6D6',
       critic: '',
-      type: 'Frio',
+      attType: 'Frio',
       range: '',
       test: 'Oposto'
     }

@@ -16,11 +16,11 @@ export const Description = styled.span`
 
 export const Points = styled.div`
   span:nth-child(odd) {
-    font-size: 48px;
+    font-size: 32px;
   }
 
   span:nth-child(even) {
-    font-size: 64px;
+    font-size: 48px;
     color: var(--dark-grey);
   }
 `
@@ -53,12 +53,12 @@ export const HealthControllers = styled.div`
 
   button {
     justify-self: center;
-    width: 86px;
+    width: 56px;
     height: 38px;
     border: 2px solid var(--red);
     background: var(--red);
     color: var(--yellow);
-    font-size: 24px;
+    font-size: 18px;
     font-family: "Vollkorn SC", serif;
     cursor: pointer;
     transition: 0.1s ease-in;

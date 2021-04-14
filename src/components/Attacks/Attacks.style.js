@@ -8,6 +8,12 @@ export const Container = styled.div`
   }
 `
 
+export const AttacksHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
 export const Table = styled.table`
   background-color: var(--red);
   margin-bottom: 16px;
