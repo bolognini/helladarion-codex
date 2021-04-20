@@ -11,7 +11,6 @@ import {
 import { Separator, Loot, Notes } from 'assets'
 import { useModal } from 'hooks/useModal'
 import { useSheet } from './Sheet.hooks'
-import { SHEET_DATA } from './Sheet.mock'
 import { Container, Perks, Stats, Name, SkillsWrapper, Skills, AbilitiesWrapper, Misc, IconWrapper } from './Sheet.style'
 
 export const Sheet = () => {

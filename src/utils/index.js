@@ -1,12 +1,10 @@
 export const onLoadEditableElements = () => {
-  setTimeout(() => {
-    Object.keys(localStorage).forEach(key => {
-      if (key.includes('sheetData-')) {
-        const id = key.replace('sheetData-', '')
-        document.querySelector(`#${id}`).innerHTML = localStorage.getItem(key)
-      }
-    })
-  }, 2000)
+  Object.keys(localStorage).forEach(key => {
+    if (key.includes('sheetData-')) {
+      const id = key.replace('sheetData-', '')
+      document.querySelector(`#${id}`).innerHTML = localStorage.getItem(key)
+    }
+  })
 }
 
 export const onSaveEditable = () => {
