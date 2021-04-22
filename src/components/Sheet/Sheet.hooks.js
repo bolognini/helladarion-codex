@@ -11,7 +11,7 @@ export const useSheet = () => {
     const id = new URLSearchParams(window.location.search).get('id')
 
     if (id) {
-      axios.get(`https://helladarion.herokuapp.com//monster/${id}`)
+      axios.get(`https://helladarion.herokuapp.com/monster/${id}`)
         .then(res => {
           if (res.status === 200) {
             setMonsterData(res.data.monster)
