@@ -20,6 +20,7 @@
     }
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.24.50",
     "gatsby-plugin-dynamic-routes": "^1.0.0",

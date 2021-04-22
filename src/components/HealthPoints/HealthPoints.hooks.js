@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export const useHealthPoints = ({ healthpoints }) => {
-  const [currentHealth, setCurrentHealth] = useState(healthpoints)
+  const [currentHealth, setCurrentHealth] = useState(0)
+
+  useEffect(() => {
+    setCurrentHealth(healthpoints)
+  }, [healthpoints])
 
   const trimNegativeResult = modifier => {
     const result = currentHealth - modifier

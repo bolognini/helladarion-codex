@@ -2,7 +2,10 @@ export const onLoadEditableElements = () => {
   Object.keys(localStorage).forEach(key => {
     if (key.includes('sheetData-')) {
       const id = key.replace('sheetData-', '')
-      document.querySelector(`#${id}`).innerHTML = localStorage.getItem(key)
+      const element = document.querySelector(`#${id}`)
+      if (element) {
+        element.innerHTML = localStorage.getItem(key)
+      }
     }
   })
 }

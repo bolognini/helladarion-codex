@@ -2,13 +2,27 @@ import React from 'react'
 import { useShowAll } from 'hooks/useShowAll'
 import { Editable } from 'components/Editable/Editable'
 import { tableHeaders } from './constants'
-import { Container, Table, AllAttacks } from './Attacks.style'
+import { Container, AttacksHeader, Table, AllAttacks } from './Attacks.style'
 
 export const Attacks = ({ attacksList, setModalType, openModal }) => {
   const { hiddenItems } = useShowAll({ list: attacksList, maxLength: 4 })
   return (
     <Container>
-      <h2>Ataques</h2>
+      <AttacksHeader>
+        <h2>Ataques</h2>
+        <AllAttacks>{`${hiddenItems} ocultos | `}
+          <em
+            role='link'
+            tabIndex={0}
+            onClick={() => {
+              setModalType('attacks')
+              openModal()
+            }}
+          >
+            ver todos
+          </em>
+        </AllAttacks>
+      </AttacksHeader>
       <Table>
         <thead>
           <tr>
@@ -18,7 +32,7 @@ export const Attacks = ({ attacksList, setModalType, openModal }) => {
           </tr>
         </thead>
         <tbody>
-          {attacksList.map((attack, index) => {
+          {attacksList && attacksList.map((attack, index) => {
             if (index > 3) return
             return (
               <tr key={`attackName-${index}`}>
@@ -69,18 +83,6 @@ export const Attacks = ({ attacksList, setModalType, openModal }) => {
           })}
         </tbody>
       </Table>
-      <AllAttacks>{`${hiddenItems} ocultos | `}
-        <em
-          role='link'
-          tabIndex={0}
-          onClick={() => {
-            setModalType('attacks')
-            openModal()
-          }}
-        >
-          ver todos
-        </em>
-      </AllAttacks>
     </Container>
   )
 }
