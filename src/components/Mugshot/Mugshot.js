@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from './Mugshot.style'
 
-export const Mugshot = () => (
-  <Container />
+export const Mugshot = ({ image }) => (
+  <Container image={image} />
 )
