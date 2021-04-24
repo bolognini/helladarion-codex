@@ -95,7 +95,7 @@ export const Sheet = () => {
               level={monsterData.level}
             />
             <HealthPoints healthpoints={monsterData.healthpoints} />
-            <Mugshot image={monsterData.mugshot} />
+            <Mugshot image={window.atob(monsterData.mugshot)} />
           </Stats>
         </Container>
       )}
