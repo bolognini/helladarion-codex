@@ -63,7 +63,7 @@ export const Attacks = ({ attacksList, setModalType, openModal }) => {
                 <Editable
                   as='td'
                   id={`attackType-${index}`}
-                  text={attack.type}
+                  text={attack.attType}
                   maxLength={9}
                 />
                 <Editable

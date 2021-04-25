@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { onLoadEditableElements, onSaveEditable } from 'utils'
+import { Loot } from 'components'
 import { SHEET_DATA } from './Sheet.mock'
 
 export const useSheet = () => {
@@ -40,7 +41,7 @@ export const useSheet = () => {
       case 'attacks':
         return <div>Todas as Habilidades</div>
       case 'loot':
-        return <div>Tesouros do Inimigo</div>
+        return <Loot loot={monsterData && monsterData.treasury} />
       case 'notes':
         return <div>Anotações Gerais</div>
       default:

@@ -6,7 +6,7 @@ export const Container = styled.section`
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 48px;
   background-color: var(--grey);
-  height: 100vh;
+  min-height: 100vh;
   padding: 24px;
 
   ${breakpoint.xlarge} {
