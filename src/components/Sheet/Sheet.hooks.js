@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { onLoadEditableElements, onSaveEditable } from 'utils'
-import { Loot } from 'components'
+import { Loot, Notes } from 'components'
 import { SHEET_DATA } from './Sheet.mock'
 
 export const useSheet = () => {
@@ -32,7 +32,7 @@ export const useSheet = () => {
     onSaveEditable()
   }, [])
 
-  const renderModal = () => {
+  const renderModal = ({ closeModal }) => {
     switch (modalType) {
       case 'senses':
         return <div>Todos os Sentidos</div>
@@ -41,9 +41,9 @@ export const useSheet = () => {
       case 'attacks':
         return <div>Todas as Habilidades</div>
       case 'loot':
-        return <Loot loot={monsterData && monsterData.treasury} />
+        return <Loot loot={monsterData && monsterData.treasury} closeModal={closeModal} />
       case 'notes':
-        return <div>Anotações Gerais</div>
+        return <Notes notes={monsterData && monsterData.notes} closeModal={closeModal} />
       default:
     }
   }

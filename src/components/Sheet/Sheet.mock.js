@@ -5,6 +5,8 @@ export const SHEET_DATA = {
   defense: '10',
   distance: '5',
   healthpoints: 20,
+  treasury: 'Tesouros encontrados...',
+  notes: 'Anotações Gerais...',
   attributes: [
     {
       name: 'FOR',

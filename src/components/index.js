@@ -8,6 +8,7 @@ import { MonsterInfo } from './MonsterInfo/MonsterInfo'
 import { Mugshot } from './Mugshot/Mugshot'
 import { Modal } from './Modal/Modal'
 import { Loot } from './Loot/Loot'
+import { Notes } from './Notes/Notes'
 
 export {
   Abilities,
@@ -19,5 +20,6 @@ export {
   MonsterInfo,
   Mugshot,
   Modal,
-  Loot
+  Loot,
+  Notes
 }

@@ -1,18 +1,18 @@
 import React from 'react'
 import { Editable } from '../Editable/Editable'
 import { Button } from '../Button/Button'
-import { Container, ButtonWrapper } from './Loot.style'
+import { Container, ButtonWrapper } from './Notes.style'
 
-export const Loot = ({ loot, closeModal }) => {
+export const Notes = ({ notes, closeModal }) => {
   const monsterId = new URLSearchParams(window.location.search).get('id')
 
   return (
     <Container>
-      <h2>— Tesouros do Monstro —</h2>
+      <h2>— Notas Gerais —</h2>
       <Editable
         as='textarea'
-        id='treasury'
-        text={localStorage.getItem(`${monsterId}-treasury`) || loot}
+        id='notes'
+        text={localStorage.getItem(`${monsterId}-notes`) || notes}
       />
       <ButtonWrapper>
         <Button

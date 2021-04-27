@@ -5,7 +5,11 @@ export const onLoadEditableElements = () => {
       const id = key.replace(`${monsterId}-`, '')
       const element = document.querySelector(`#${id}`)
       if (element) {
-        element.innerHTML = localStorage.getItem(key)
+        if (element.type === 'textarea') {
+          element.defaultValue = localStorage.getItem(key)
+        } else {
+          element.innerHTML = localStorage.getItem(key)
+        }
       }
     }
   })
@@ -17,15 +21,20 @@ export const onSaveEditable = () => {
 
   editableElements.forEach(el => {
     el.addEventListener('keyup', () => {
-      localStorage.setItem(`${monsterId}-${el.id}`, el.innerHTML)
+      if (el.type === 'textarea') {
+        localStorage.setItem(`${monsterId}-${el.id}`, el.value)
+      } else {
+        localStorage.setItem(`${monsterId}-${el.id}`, el.innerHTML)
+      }
     })
   })
 }
 
 export const onManuallySaveEditable = text => {
+  const monsterId = new URLSearchParams(window.location.search).get('id')
   const editableElements = document.querySelectorAll('[contenteditable]')
 
   Array.from(editableElements).forEach(el => {
-    localStorage.setItem(`sheetData-${el.id}`, text)
+    localStorage.setItem(`${monsterId}-${el.id}`, text)
   })
 }
