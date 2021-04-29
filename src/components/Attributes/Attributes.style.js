@@ -57,6 +57,7 @@ export const AttName = styled.span`
 
 export const Values = styled.div`
   display: grid;
+  grid-template-rows: 2fr 1fr;
   width: 100%;
   align-items: center;
   text-align: center;
@@ -66,11 +67,15 @@ export const Values = styled.div`
   }
 
   span:nth-child(1) {
-    font-size: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-size: 52px;
     border-bottom: 2px solid var(--red);
   }
 
   span:nth-child(2) {
-    font-size: 36px;
+    font-size: 28px;
   }
 `
