@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { onLoadEditableElements, onSaveEditable } from 'utils'
-import { Loot, Notes, HiddenAbilities } from 'components'
+import { Loot, Notes, HiddenAbilities, HiddenAttacks } from 'components'
 import { SHEET_DATA } from './Sheet.mock'
 
 export const useSheet = () => {
@@ -39,7 +39,7 @@ export const useSheet = () => {
       case 'resistances':
         return <HiddenAbilities type='resistances' monsterData={monsterData && monsterData} closeModal={closeModal} />
       case 'attacks':
-        return <div>Todas as Habilidades</div>
+        return <HiddenAttacks monsterData={monsterData && monsterData} closeModal={closeModal} />
       case 'loot':
         return <Loot loot={monsterData && monsterData.treasury} closeModal={closeModal} />
       case 'notes':

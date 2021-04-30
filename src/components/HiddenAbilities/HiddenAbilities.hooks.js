@@ -6,7 +6,7 @@ export const useHiddenAbilities = ({ type, monsterId, monsterData, closeModal })
   const [typeKeys, setTypeKeys] = useState({})
 
   const onSaveAbilities = () => {
-    const updatedSenses = list.reduce((acc, cur, index) => {
+    const updatedAbilities = list.reduce((acc, cur, index) => {
       const name = localStorage.getItem(`${monsterId}-${typeKeys.localStorageKey}-abilityName-${index}`)
       const rolling = localStorage.getItem(`${monsterId}-${typeKeys.localStorageKey}-abilityRolling-${index}`)
 
@@ -20,7 +20,7 @@ export const useHiddenAbilities = ({ type, monsterId, monsterData, closeModal })
         }
       }
     }, [])
-    return Object.values(updatedSenses)
+    return Object.values(updatedAbilities)
   }
 
   const onUpdateAbilities = () => {
@@ -60,7 +60,6 @@ export const useHiddenAbilities = ({ type, monsterId, monsterData, closeModal })
     list,
     typeKeys,
     onAddInput,
-    onSaveAbilities,
     onUpdateAbilities
   }
 }
