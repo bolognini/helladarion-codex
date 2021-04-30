@@ -12,6 +12,11 @@ export const Abilities = ({
   openModal
 }) => {
   const { hiddenItems } = useShowAll({ list: abilitiesList, maxLength: 3 })
+  const textTypes = {
+    title: title === 'Sentidos' ? `${hiddenItems} ocultos | ` : `${hiddenItems} ocultas | `,
+    cta: title === 'Sentidos' ? 'ver todos' : 'ver todas'
+  }
+
   return (
     <Container>
       <ShortSeparatorTop />
@@ -19,7 +24,7 @@ export const Abilities = ({
         <Type>
           <h2>{title}</h2>
           <AllAbilities>
-            {`${hiddenItems} ocultos | `}
+            {textTypes.title}
             <em
               role='link'
               tabIndex={0}
@@ -28,7 +33,7 @@ export const Abilities = ({
                 openModal()
               }}
             >
-              ver todos
+              {textTypes.cta}
             </em>
           </AllAbilities>
         </Type>
