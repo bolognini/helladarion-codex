@@ -1,6 +1,5 @@
 import React from 'react'
 import { useShowAll } from 'hooks/useShowAll'
-import { Editable } from 'components/Editable/Editable'
 import { tableHeaders } from './constants'
 import { Container, AttacksHeader, Table, AllAttacks } from './Attacks.style'
 
