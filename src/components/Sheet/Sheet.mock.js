@@ -1,15 +1,17 @@
 export const SHEET_DATA = {
-  name: 'Verme de Gelo',
-  description: `'Algo está devorando os mamutes. Nós seremos os próximos'. - Espírito-de-Pedra, xamã das Montanhas Uivantes`,
-  level: '11',
-  defense: '25',
-  distance: '12',
-  healthpoints: 120,
+  name: 'Monstro Genérico',
+  description: `'É tão genérico que nem deram um nome'. - Geraldo, o caçador do bairro`,
+  level: '2',
+  defense: '10',
+  distance: '5',
+  healthpoints: 20,
+  treasury: 'Tesouros encontrados...',
+  notes: 'Anotações Gerais...',
   attributes: [
     {
       name: 'FOR',
-      value: 30,
-      modificator: 9
+      value: 10,
+      modificator: 0
     },
     {
       name: 'DES',
@@ -18,51 +20,51 @@ export const SHEET_DATA = {
     },
     {
       name: 'CON',
-      value: 22,
-      modificator: 6
-    },
-    {
-      name: 'INT',
-      value: 2,
-      modificator: -4
-    },
-    {
-      name: 'SAB',
       value: 12,
       modificator: 1
     },
     {
+      name: 'INT',
+      value: 12,
+      modificator: 1
+    },
+    {
+      name: 'SAB',
+      value: 4,
+      modificator: -3
+    },
+    {
       name: 'CAR',
-      value: 8,
-      modificator: -1
+      value: 12,
+      modificator: 1
     }
   ],
   senses: [
     {
-      name: 'Iniciativa +16',
-      rolling: 'D20 + 16'
+      name: 'Iniciativa +2',
+      rolling: 'D20 + 3'
     },
     {
-      name: 'Percepção +17',
-      rolling: 'D20 + 18'
+      name: 'Percepção',
+      rolling: 'D20 -2'
     },
     {
-      name: 'Visão no Escuro',
+      name: 'Visão na Penumbra',
       rolling: ''
     }
   ],
   resistances: [
     {
-      name: 'Fortitude +14',
-      rolling: 'D20 + 20'
+      name: 'Fortitude +2',
+      rolling: 'D20 + 4'
     },
     {
-      name: 'Reflexo +8',
-      rolling: 'D20 + 8'
+      name: 'Reflexo',
+      rolling: 'D20 +1'
     },
     {
-      name: 'Vontade +7',
-      rolling: 'D20 + 8'
+      name: 'Vontade',
+      rolling: 'D20 - 2'
     },
     {
       name: 'Imunidade à frio',
@@ -76,38 +78,38 @@ export const SHEET_DATA = {
   attacks: [
     {
       attackName: 'Mordida',
-      bonus: '1D3',
-      damage: '6D6',
-      critic: '',
-      attType: 'Frio',
-      range: '',
+      bonus: '',
+      damage: '1d4',
+      critic: '2x',
+      attType: 'Perfurante',
+      range: '1m',
       test: 'Luta'
     },
     {
-      attackName: 'Baforada de Gelo',
-      bonus: '',
-      damage: '1D8',
-      critic: '',
-      attType: 'Frio',
-      range: '',
-      test: 'Oposto'
-    },
-    {
-      attackName: 'Espasmo Mortal',
-      bonus: '',
+      attackName: 'Derrubar',
+      bonus: '+8',
       damage: '',
       critic: '',
       attType: '',
-      range: '18m',
-      test: 'Oposto'
+      range: '',
+      test: 'Livre'
     },
     {
-      attackName: 'Rugido Amendrontador',
-      bonus: '1D3',
-      damage: '6D6',
+      attackName: 'Veneno',
+      bonus: '',
+      damage: '1d12/1d6r',
       critic: '',
-      attType: 'Frio',
+      attType: '',
       range: '',
+      test: 'Oposto 22'
+    },
+    {
+      attackName: 'Espada Longa +13',
+      bonus: '',
+      damage: '1d8+5',
+      critic: '19',
+      attType: 'Cortante',
+      range: '1m',
       test: 'Oposto'
     },
     {

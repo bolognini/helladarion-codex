@@ -7,6 +7,19 @@ const Element = styled.p``
 export const Editable = ({ as: tag, text, id, maxLength }) => {
   const { elementRef, onInput } = useEditable({ maxLength })
 
+  if (tag === 'textarea') {
+    return (
+      <Element
+        as={tag}
+        id={id}
+        ref={elementRef}
+        onInput={onInput}
+        defaultValue={text}
+        contentEditable
+        suppressContentEditableWarning
+      />
+    )
+  }
   return (
     <Element
       as={tag}

@@ -7,6 +7,10 @@ import { Indicator } from './Indicator/Indicator'
 import { MonsterInfo } from './MonsterInfo/MonsterInfo'
 import { Mugshot } from './Mugshot/Mugshot'
 import { Modal } from './Modal/Modal'
+import { Loot } from './Loot/Loot'
+import { Notes } from './Notes/Notes'
+import { HiddenAbilities } from './HiddenAbilities/HiddenAbilities'
+import { HiddenAttacks } from './HiddenAttacks/HiddenAttacks'
 
 export {
   Abilities,
@@ -17,5 +21,9 @@ export {
   Indicator,
   MonsterInfo,
   Mugshot,
-  Modal
+  Modal,
+  Loot,
+  Notes,
+  HiddenAbilities,
+  HiddenAttacks
 }

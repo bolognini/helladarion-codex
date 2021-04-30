@@ -1,7 +1,6 @@
 import React from 'react'
 import { ShortSeparatorTop, ShortSeparatorBottom } from 'assets'
 import { useShowAll } from 'hooks/useShowAll'
-import { Editable } from 'components/Editable/Editable'
 import { Container, Box, Type, Ability, AllAbilities } from './Abilities.style'
 
 export const Abilities = ({
@@ -12,6 +11,11 @@ export const Abilities = ({
   openModal
 }) => {
   const { hiddenItems } = useShowAll({ list: abilitiesList, maxLength: 3 })
+  const textTypes = {
+    title: title === 'Sentidos' ? `${hiddenItems} ocultos | ` : `${hiddenItems} ocultas | `,
+    cta: title === 'Sentidos' ? 'editar / ver todos' : 'editar / ver todas'
+  }
+
   return (
     <Container>
       <ShortSeparatorTop />
@@ -19,7 +23,7 @@ export const Abilities = ({
         <Type>
           <h2>{title}</h2>
           <AllAbilities>
-            {`${hiddenItems} ocultos | `}
+            {textTypes.title}
             <em
               role='link'
               tabIndex={0}
@@ -28,7 +32,7 @@ export const Abilities = ({
                 openModal()
               }}
             >
-              ver todos
+              {textTypes.cta}
             </em>
           </AllAbilities>
         </Type>
@@ -37,18 +41,8 @@ export const Abilities = ({
             if (index > 2) return
             return (
               <li key={index}>
-                <Editable
-                  as='span'
-                  id={`${title}-abilityName-${index}`}
-                  text={ability.name}
-                  maxLength={18}
-                />
-                <Editable
-                  as='span'
-                  id={`${title}-abilityRolling-${index}`}
-                  text={ability.rolling}
-                  maxLength={16}
-                />
+                <span id={`${title}-abilityRolling-${index}`}>{ability.name}</span>
+                <span id={`${title}-abilityRolling-${index}`}>{ability.rolling}</span>
               </li>
             )
           })}

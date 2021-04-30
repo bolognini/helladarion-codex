@@ -14,7 +14,7 @@ import { useSheet } from './Sheet.hooks'
 import { Container, Perks, Stats, Name, SkillsWrapper, Skills, AbilitiesWrapper, Misc, IconWrapper } from './Sheet.style'
 
 export const Sheet = () => {
-  const { openModal, Modal } = useModal()
+  const { openModal, closeModal, Modal } = useModal()
   const { renderModal, setModalType, monsterData } = useSheet()
 
   return (
@@ -22,7 +22,7 @@ export const Sheet = () => {
       {monsterData && (
         <Container>
           <Modal>
-            {renderModal()}
+            {renderModal({ closeModal })}
           </Modal>
           <Perks>
             <Name>
@@ -95,7 +95,7 @@ export const Sheet = () => {
               level={monsterData.level}
             />
             <HealthPoints healthpoints={monsterData.healthpoints} />
-            <Mugshot image={window.atob(monsterData.mugshot)} />
+            <Mugshot image={monsterData.mugshot && window.atob(monsterData.mugshot)} />
           </Stats>
         </Container>
       )}
