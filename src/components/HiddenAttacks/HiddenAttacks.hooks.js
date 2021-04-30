@@ -47,7 +47,7 @@ export const useHiddenAttacks = ({ monsterId, monsterData, closeModal }) => {
   const onUpdateAttacks = () => {
     const updatedData = { ...monsterData, attacks: onSaveAttacks() }
     axios
-      .put('https://helladarion.herokuapp.com//monster/update', updatedData)
+      .put('https://helladarion.herokuapp.com/monster/update', updatedData)
       .then(() => setList(onSaveAttacks()))
       .then(closeModal)
       .catch(error => console.error(error))

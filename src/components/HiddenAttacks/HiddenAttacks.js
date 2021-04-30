@@ -35,43 +35,43 @@ export const HiddenAttacks = ({ monsterData, closeModal }) => {
                 <Editable
                   as='td'
                   id={`attackName-${index}`}
-                  text={attack.attackName}
+                  text={localStorage.getItem(`${monsterId}-attackName-${index}`) || attack.attackName}
                   maxLength={16}
                 />
                 <Editable
                   as='td'
                   id={`attackBonus-${index}`}
-                  text={attack.bonus}
+                  text={localStorage.getItem(`${monsterId}-attackBonus-${index}`) || attack.bonus}
                   maxLength={9}
                 />
                 <Editable
                   as='td'
                   id={`attackDamage-${index}`}
-                  text={attack.damage}
+                  text={localStorage.getItem(`${monsterId}-attackDamage-${index}`) || attack.damage}
                   maxLength={9}
                 />
                 <Editable
                   as='td'
                   id={`attackCritic-${index}`}
-                  text={attack.critic}
+                  text={localStorage.getItem(`${monsterId}-attackCritic-${index}`) || attack.critic}
                   maxLength={9}
                 />
                 <Editable
                   as='td'
                   id={`attackType-${index}`}
-                  text={attack.attType}
+                  text={localStorage.getItem(`${monsterId}-attackType-${index}`) || attack.attType}
                   maxLength={9}
                 />
                 <Editable
                   as='td'
                   id={`attackRange-${index}`}
-                  text={attack.range}
+                  text={localStorage.getItem(`${monsterId}-attackRange-${index}`) || attack.range}
                   maxLength={9}
                 />
                 <Editable
                   as='td'
                   id={`attackTest-${index}`}
-                  text={attack.test}
+                  text={localStorage.getItem(`${monsterId}-attackTest-${index}`) || attack.test}
                   maxLength={10}
                 />
               </tr>
