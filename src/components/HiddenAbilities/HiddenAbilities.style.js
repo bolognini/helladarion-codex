@@ -19,7 +19,7 @@ export const Content = styled.div`
   height: 90%;
 `
 
-export const Senses = styled.ul`
+export const Abilities = styled.ul`
   overflow: auto;
   max-height: 70%;
 

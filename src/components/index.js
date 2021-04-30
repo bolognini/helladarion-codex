@@ -9,7 +9,7 @@ import { Mugshot } from './Mugshot/Mugshot'
 import { Modal } from './Modal/Modal'
 import { Loot } from './Loot/Loot'
 import { Notes } from './Notes/Notes'
-import { HiddenSenses } from './HiddenSenses/HiddenSenses'
+import { HiddenAbilities } from './HiddenAbilities/HiddenAbilities'
 
 export {
   Abilities,
@@ -23,5 +23,5 @@ export {
   Modal,
   Loot,
   Notes,
-  HiddenSenses
+  HiddenAbilities
 }
