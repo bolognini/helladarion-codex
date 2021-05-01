@@ -1,5 +1,7 @@
+export const onGetQueryParams = () => new URLSearchParams(window.location.search).get('id')
+const monsterId = onGetQueryParams()
+
 export const onLoadEditableElements = () => {
-  const monsterId = new URLSearchParams(window.location.search).get('id')
   Object.keys(localStorage).forEach(key => {
     if (key.includes(`${monsterId}-`)) {
       const id = key.replace(`${monsterId}-`, '')
@@ -16,7 +18,6 @@ export const onLoadEditableElements = () => {
 }
 
 export const onSaveEditable = () => {
-  const monsterId = new URLSearchParams(window.location.search).get('id')
   const editableElements = document.querySelectorAll('[contenteditable]')
 
   editableElements.forEach(el => {
@@ -31,7 +32,6 @@ export const onSaveEditable = () => {
 }
 
 export const onManuallySaveEditable = text => {
-  const monsterId = new URLSearchParams(window.location.search).get('id')
   const editableElements = document.querySelectorAll('[contenteditable]')
 
   Array.from(editableElements).forEach(el => {

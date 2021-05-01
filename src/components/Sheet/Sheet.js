@@ -15,7 +15,7 @@ import { Container, Perks, Stats, Name, SkillsWrapper, Skills, AbilitiesWrapper,
 
 export const Sheet = () => {
   const { openModal, closeModal, Modal } = useModal()
-  const { renderModal, setModalType, monsterData } = useSheet()
+  const { renderModal, setModalType, monsterData, onUpdateMonster } = useSheet()
 
   return (
     <>
@@ -40,6 +40,7 @@ export const Sheet = () => {
                 maxLength={180}
               />
             </Name>
+            <button type='button' onClick={onUpdateMonster}>ATUALIZAR BONECO</button>
             <SkillsWrapper>
               <Skills>
                 <Attributes attributeList={monsterData.attributes} />
