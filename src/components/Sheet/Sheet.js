@@ -95,7 +95,12 @@ export const Sheet = () => {
               distance={monsterData.distance}
               level={monsterData.level}
             />
-            <HealthPoints healthpoints={monsterData.healthpoints} />
+            <HealthPoints
+              healthpoints={monsterData.healthpoints}
+              currentHp={monsterData.currentHealth}
+              setModalType={setModalType}
+              openModal={openModal}
+            />
             <Mugshot image={monsterData.mugshot && window.atob(monsterData.mugshot)} />
           </Stats>
         </Container>

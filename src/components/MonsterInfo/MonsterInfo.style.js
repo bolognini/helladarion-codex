@@ -6,6 +6,11 @@ export const Container = styled.div`
   justify-items: start;
   align-items: center;
   color: var(--red);
+
+  p {
+    display: inline;
+    font-size: 52px;
+  }
 `
 
 export const Icon = styled.div`
@@ -13,17 +18,15 @@ export const Icon = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100px;
-  height: 90px;
+  height: 70px;
   background-image: ${({ icon }) => `url(${icon})`};
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 
   span:first-child {
     padding-top: 8px;
   }
-`
-
-export const Value = styled.span`
-  font-size: 64px;
 `
 
 export const Description = styled.span`
@@ -31,10 +34,10 @@ export const Description = styled.span`
 `
 
 export const Level = styled.div`
-  font-size: 64px;
+  font-size: 32px;
   justify-self: end;
 
-  span:first-child {
+  p {
     font-size: 48px;
   }
 `
