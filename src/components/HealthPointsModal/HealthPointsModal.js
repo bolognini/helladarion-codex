@@ -1,27 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useUpdateData } from 'hooks/useUpdateData'
-import { onGetQueryParams } from 'utils'
 import { Button } from '../Button/Button'
+import { useHealthPointsModal } from './HealthPointsModal.hooks'
 import { Container, ButtonWrapper } from './HealthPointsModal.style'
 
 export const HealthPointsModal = ({ monsterData, closeModal, onGetData }) => {
-  const id = onGetQueryParams()
-  const [maximumHealth, setMaximumHealth] = useState(monsterData.healthpoints)
-  const [currentHealth, setCurrentHealth] = useState(localStorage.getItem(`${id}-currentHealth`) || monsterData.currentHealth)
+  const { maximumHealth, currentHealth, updateHealth } = useHealthPointsModal({ monsterData })
 
   const { onUpdateHealthPoints } = useUpdateData({
     monsterData,
     closeModal,
     onGetData
   })
-
-  const updateHealth = ({ value, type }) => {
-    if (type === 'healthpoints') {
-      setMaximumHealth(value)
-    } else {
-      setCurrentHealth(value)
-    }
-  }
 
   return (
     <Container>
