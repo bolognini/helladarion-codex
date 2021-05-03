@@ -9,11 +9,17 @@ export const useHealthPointsModal = ({ monsterData }) => {
     localStorage.getItem(`${id}-currentHealth`) || monsterData.currentHealth
   )
 
+  const trimValue = (value, setter) => {
+    if (value < 0) setter(0)
+    else if (value > 9999) setter(9999)
+    else setter(value)
+  }
+
   const updateHealth = ({ value, type }) => {
     if (type === 'healthpoints') {
-      setMaximumHealth(value)
+      trimValue(value, setMaximumHealth)
     } else {
-      setCurrentHealth(value)
+      trimValue(value, setCurrentHealth)
     }
   }
 

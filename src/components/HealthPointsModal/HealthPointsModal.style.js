@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 600px;
-  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 300px;
 
   h2 {
     font-size: 24px;
@@ -14,11 +17,12 @@ export const Container = styled.div`
   label {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 
     input {
       height: 50px;
       width: 200px;
+      margin-bottom: 16px;
       padding: 14px 24px;
       background: transparent;
       font-size: 18px;

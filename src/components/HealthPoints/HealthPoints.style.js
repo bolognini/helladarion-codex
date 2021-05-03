@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   color: var(--red);
+  margin: 8px 0;
 `
 
 export const PointsWrapper = styled.div`
@@ -16,11 +17,11 @@ export const Description = styled.span`
 
 export const Points = styled.div`
   span:nth-child(odd) {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   span:nth-child(even) {
-    font-size: 48px;
+    font-size: 32px;
     color: var(--dark-grey);
   }
 `
