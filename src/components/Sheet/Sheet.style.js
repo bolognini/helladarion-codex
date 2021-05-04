@@ -16,6 +16,11 @@ export const Container = styled.section`
 
 export const Perks = styled.div``
 
+export const NameWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
 export const Name = styled.div`
   margin-bottom: 36px;
 
