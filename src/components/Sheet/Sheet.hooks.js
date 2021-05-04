@@ -55,14 +55,30 @@ export const useSheet = () => {
   }
 
   const onUpdateMonster = () => {
-    console.log(monsterData)
+    const newData = Object.keys(localStorage).reduce((acc, cur) => {
+      if (cur.includes(`${id}-`)) {
+        const key = cur.replace(`${id}-`, '')
+        const value = localStorage.getItem(cur)
 
-    // const updatedData = { ...monsterData, attacks: onSaveAttacks() }
-    // axios
-    //   .put('https://helladarion.herokuapp.com/monster/update', updatedData)
-    //   .then(() => setList(onSaveAttacks()))
-    //   .then(closeModal)
-    //   .catch(error => console.error(error))
+        if (/(FOR|DES|CON|INT|SAB|CAR)/gm.test(key)) return acc
+
+        return {
+          ...acc,
+          [key]: value
+        }
+      }
+      return acc
+    }, {})
+
+    const attributeList = JSON.parse(localStorage.getItem('attributes')) || monsterData.attributes
+    const organizedData = { ...newData, attributes: [...attributeList] }
+    const updatedData = { ...monsterData, ...organizedData }
+
+    axios
+      .put('https://helladarion.herokuapp.com/monster/update', updatedData)
+      .then(() => localStorage.clear())
+      .then(onGetData)
+      .catch(error => console.error(error))
   }
 
   return {

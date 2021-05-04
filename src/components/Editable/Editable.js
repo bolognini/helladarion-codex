@@ -4,8 +4,8 @@ import { useEditable } from './Editable.hooks'
 
 const Element = styled.p``
 
-export const Editable = ({ as: tag, text, id, maxLength }) => {
-  const { elementRef, onInput } = useEditable({ maxLength })
+export const Editable = ({ as: tag, text, id, maxLength, onSaveAttributes }) => {
+  const { elementRef, onInput } = useEditable({ maxLength, onSaveAttributes, id })
 
   if (tag === 'textarea') {
     return (
@@ -13,7 +13,7 @@ export const Editable = ({ as: tag, text, id, maxLength }) => {
         as={tag}
         id={id}
         ref={elementRef}
-        onInput={onInput}
+        onKeyUp={onInput}
         defaultValue={text}
         contentEditable
         suppressContentEditableWarning
@@ -25,7 +25,7 @@ export const Editable = ({ as: tag, text, id, maxLength }) => {
       as={tag}
       id={id}
       ref={elementRef}
-      onInput={onInput}
+      onKeyUp={onInput}
       contentEditable
       suppressContentEditableWarning
     >

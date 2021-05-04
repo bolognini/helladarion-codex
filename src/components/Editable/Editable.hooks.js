@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { onSaveEditable } from 'utils'
 
-export const useEditable = ({ maxLength }) => {
+export const useEditable = ({ maxLength, onSaveAttributes, id }) => {
   const elementRef = useRef()
 
   const placeCaretAtEnd = element => {
@@ -30,6 +30,9 @@ export const useEditable = ({ maxLength }) => {
       const trimmedText = textContent.slice(0, maxLength)
       elementRef.current.innerText = trimmedText
       placeCaretAtEnd(elementRef.current)
+      onSaveAttributes && onSaveAttributes({ id, trimmedText })
+    } else {
+      onSaveAttributes && onSaveAttributes({ id })
     }
     onSaveEditable()
   }
