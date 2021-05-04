@@ -15,7 +15,7 @@ import { Container, Perks, Stats, Name, SkillsWrapper, Skills, AbilitiesWrapper,
 
 export const Sheet = () => {
   const { openModal, closeModal, Modal } = useModal()
-  const { renderModal, setModalType, monsterData, onUpdateMonster } = useSheet()
+  const { renderModal, setModalType, monsterData, onUpdateMonster, onGetData } = useSheet()
 
   return (
     <>
@@ -101,7 +101,7 @@ export const Sheet = () => {
               setModalType={setModalType}
               openModal={openModal}
             />
-            <Mugshot image={monsterData.mugshot && window.atob(monsterData.mugshot)} />
+            <Mugshot monsterData={monsterData} onGetData={onGetData} />
           </Stats>
         </Container>
       )}

@@ -85,6 +85,7 @@ export const useSheet = () => {
     renderModal,
     setModalType,
     monsterData,
-    onUpdateMonster
+    onUpdateMonster,
+    onGetData
   }
 }
