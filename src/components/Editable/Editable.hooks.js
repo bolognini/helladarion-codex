@@ -37,8 +37,13 @@ export const useEditable = ({ maxLength, onSaveAttributes, id }) => {
     onSaveEditable()
   }
 
+  const onPrevent = e => {
+    if (e.which === 13) return e.preventDefault()
+  }
+
   return {
     elementRef,
-    onInput
+    onInput,
+    onPrevent
   }
 }
