@@ -1,4 +1,6 @@
-export const onGetQueryParams = () => new URLSearchParams(window.location.search).get('id')
+export const isBrowser = typeof window !== 'undefined'
+export const onGetQueryParams = () => isBrowser && new URLSearchParams(window.location.search).get('id')
+
 const monsterId = onGetQueryParams()
 
 export const onLoadEditableElements = () => {
