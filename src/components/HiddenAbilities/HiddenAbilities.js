@@ -1,20 +1,33 @@
 import React from 'react'
+import { useUpdateData } from 'hooks/useUpdateData'
+import { onGetQueryParams } from 'utils'
 import { Editable } from '../Editable/Editable'
 import { Button } from '../Button/Button'
 import { useHiddenAbilities } from './HiddenAbilities.hooks'
-import { Container, Content, Abilities, ButtonWrapper } from './HiddenAbilities.style'
+import {
+  Container,
+  Content,
+  Abilities,
+  ButtonWrapper
+} from './HiddenAbilities.style'
 
-export const HiddenAbilities = ({ type, monsterData, closeModal }) => {
-  const monsterId = new URLSearchParams(window.location.search).get('id')
+export const HiddenAbilities = ({ type, monsterData, closeModal, onGetData }) => {
+  const id = onGetQueryParams()
   const {
     list,
     onAddInput,
-    onUpdateAbilities,
+    onSaveAbilities,
     typeKeys
   } = useHiddenAbilities({
     type,
-    monsterId,
+    id,
+    monsterData
+  })
+  const { onUpdateData } = useUpdateData({
     monsterData,
+    key: type,
+    onSaveData: onSaveAbilities,
+    onGetData,
     closeModal
   })
 
@@ -28,28 +41,29 @@ export const HiddenAbilities = ({ type, monsterData, closeModal }) => {
               <Editable
                 as='span'
                 id={`${typeKeys.localStorageKey}-abilityName-${index}`}
-                text={localStorage.getItem(`${monsterId}-${typeKeys.localStorageKey}-abilityName-${index}`) || ability.name}
+                text={
+                  localStorage.getItem(
+                    `${id}-${typeKeys.localStorageKey}-abilityName-${index}`
+                  ) || ability.name
+                }
                 maxLength={18}
               />
               <Editable
                 as='span'
                 id={`${typeKeys.localStorageKey}-abilityRolling-${index}`}
-                text={localStorage.getItem(`${monsterId}-${typeKeys.localStorageKey}-abilityRolling-${index}`) || ability.rolling}
+                text={
+                  localStorage.getItem(
+                    `${id}-${typeKeys.localStorageKey}-abilityRolling-${index}`
+                  ) || ability.rolling
+                }
                 maxLength={16}
               />
             </li>
           ))}
         </Abilities>
         <ButtonWrapper>
-          <Button
-            secondary
-            text={typeKeys.buttonText}
-            onClick={onAddInput}
-          />
-          <Button
-            text='Salvar e fechar'
-            onClick={onUpdateAbilities}
-          />
+          <Button secondary text={typeKeys.buttonText} onClick={onAddInput} />
+          <Button text='Salvar e fechar' onClick={onUpdateData} />
         </ButtonWrapper>
       </Content>
     </Container>

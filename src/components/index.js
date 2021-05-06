@@ -11,6 +11,7 @@ import { Loot } from './Loot/Loot'
 import { Notes } from './Notes/Notes'
 import { HiddenAbilities } from './HiddenAbilities/HiddenAbilities'
 import { HiddenAttacks } from './HiddenAttacks/HiddenAttacks'
+import { HealthPointsModal } from './HealthPointsModal/HealthPointsModal'
 
 export {
   Abilities,
@@ -25,5 +26,6 @@ export {
   Loot,
   Notes,
   HiddenAbilities,
-  HiddenAttacks
+  HiddenAttacks,
+  HealthPointsModal
 }

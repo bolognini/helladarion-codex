@@ -7,6 +7,7 @@ import ShortSeparatorTop from './short-separator-top.inline.svg'
 import ShortSeparatorBottom from './short-separator-bottom.inline.svg'
 import Loot from './loot.inline.svg'
 import Notes from './notes.inline.svg'
+import Diskette from './diskette.inline.svg'
 
 export {
   Exclamation,
@@ -17,5 +18,6 @@ export {
   ShortSeparatorTop,
   ShortSeparatorBottom,
   Loot,
-  Notes
+  Notes,
+  Diskette
 }

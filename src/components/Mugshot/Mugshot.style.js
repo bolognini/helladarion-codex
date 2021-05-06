@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import defaultImage from 'assets/default.png'
 
-export const Container = styled.div`
+export const Container = styled.label`
   display: block;
   width: 100%;
   height: 61.3%;
@@ -10,5 +9,10 @@ export const Container = styled.div`
   background-size: cover;
   background-position: center;
   border: 6px solid var(--red);
-  background-image: ${({ image }) => (image ? `url(${image})` : `url(${defaultImage})`)};
+  background-image: ${({ image }) => `url(${image})`};
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
 `

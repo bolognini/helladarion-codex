@@ -1,10 +1,22 @@
 import React from 'react'
+import { useUpdateData } from 'hooks/useUpdateData'
+import { onGetQueryParams } from 'utils'
 import { Editable } from '../Editable/Editable'
 import { Button } from '../Button/Button'
 import { Container, ButtonWrapper } from './Loot.style'
 
-export const Loot = ({ loot, closeModal }) => {
-  const monsterId = new URLSearchParams(window.location.search).get('id')
+export const Loot = ({ monsterData, closeModal, onGetData }) => {
+  const id = onGetQueryParams()
+  const loot = localStorage.getItem(`${id}-treasury`) || monsterData.treasury
+  const onSaveData = () => localStorage.getItem(`${id}-treasury`) || monsterData.treasury
+
+  const { onUpdateData } = useUpdateData({
+    monsterData,
+    key: 'treasury',
+    onSaveData,
+    closeModal,
+    onGetData
+  })
 
   return (
     <Container>
@@ -12,12 +24,12 @@ export const Loot = ({ loot, closeModal }) => {
       <Editable
         as='textarea'
         id='treasury'
-        text={localStorage.getItem(`${monsterId}-treasury`) || loot}
+        text={loot}
       />
       <ButtonWrapper>
         <Button
           text='Salvar e fechar'
-          onClick={closeModal}
+          onClick={onUpdateData}
         />
       </ButtonWrapper>
     </Container>

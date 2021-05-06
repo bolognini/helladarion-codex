@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 
-export const useHiddenAttacks = ({ monsterId, monsterData, closeModal }) => {
+export const useHiddenAttacks = ({ id, monsterData }) => {
   const [list, setList] = useState([])
   const tableHeaders = [
     '',
@@ -15,13 +14,13 @@ export const useHiddenAttacks = ({ monsterId, monsterData, closeModal }) => {
 
   const onSaveAttacks = () => {
     const updatedAttacks = list.reduce((acc, cur, index) => {
-      const name = localStorage.getItem(`${monsterId}-attackName-${index}`)
-      const damage = localStorage.getItem(`${monsterId}-attackDamage-${index}`)
-      const bonus = localStorage.getItem(`${monsterId}-attackBonus-${index}`)
-      const test = localStorage.getItem(`${monsterId}-attackTest-${index}`)
-      const critic = localStorage.getItem(`${monsterId}-attackCritic-${index}`)
-      const range = localStorage.getItem(`${monsterId}-attackRange-${index}`)
-      const type = localStorage.getItem(`${monsterId}-attackType-${index}`)
+      const name = localStorage.getItem(`${id}-attackName-${index}`)
+      const damage = localStorage.getItem(`${id}-attackDamage-${index}`)
+      const bonus = localStorage.getItem(`${id}-attackBonus-${index}`)
+      const test = localStorage.getItem(`${id}-attackTest-${index}`)
+      const critic = localStorage.getItem(`${id}-attackCritic-${index}`)
+      const range = localStorage.getItem(`${id}-attackRange-${index}`)
+      const type = localStorage.getItem(`${id}-attackType-${index}`)
 
       const attackFields = [name, damage, bonus, test, critic, range, type]
       const emptyAttack = attackFields.every(field => field === '')
@@ -44,15 +43,6 @@ export const useHiddenAttacks = ({ monsterId, monsterData, closeModal }) => {
     return Object.values(updatedAttacks)
   }
 
-  const onUpdateAttacks = () => {
-    const updatedData = { ...monsterData, attacks: onSaveAttacks() }
-    axios
-      .put('https://helladarion.herokuapp.com/monster/update', updatedData)
-      .then(() => setList(onSaveAttacks()))
-      .then(closeModal)
-      .catch(error => console.error(error))
-  }
-
   useEffect(() => {
     setList(monsterData.attacks)
   }, [])
@@ -72,8 +62,8 @@ export const useHiddenAttacks = ({ monsterId, monsterData, closeModal }) => {
 
   return {
     list,
+    onSaveAttacks,
     onAddInput,
-    tableHeaders,
-    onUpdateAttacks
+    tableHeaders
   }
 }

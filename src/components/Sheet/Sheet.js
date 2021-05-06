@@ -8,14 +8,25 @@ import {
   MonsterInfo,
   Mugshot
 } from 'components'
-import { Separator, Loot, Notes } from 'assets'
+import { Separator, Loot, Notes, Diskette } from 'assets'
 import { useModal } from 'hooks/useModal'
 import { useSheet } from './Sheet.hooks'
-import { Container, Perks, Stats, Name, SkillsWrapper, Skills, AbilitiesWrapper, Misc, IconWrapper } from './Sheet.style'
+import {
+  Container,
+  Perks,
+  Stats,
+  NameWrapper,
+  Name,
+  SkillsWrapper,
+  Skills,
+  AbilitiesWrapper,
+  Misc,
+  IconWrapper
+} from './Sheet.style'
 
 export const Sheet = () => {
   const { openModal, closeModal, Modal } = useModal()
-  const { renderModal, setModalType, monsterData } = useSheet()
+  const { renderModal, setModalType, monsterData, onUpdateMonster, onGetData } = useSheet()
 
   return (
     <>
@@ -26,12 +37,15 @@ export const Sheet = () => {
           </Modal>
           <Perks>
             <Name>
-              <Editable
-                as='h1'
-                id='name'
-                text={monsterData.name}
-                maxLength={25}
-              />
+              <NameWrapper>
+                <Editable
+                  as='h1'
+                  id='name'
+                  text={monsterData.name}
+                  maxLength={25}
+                />
+                <Diskette onClick={onUpdateMonster} />
+              </NameWrapper>
               <Separator />
               <Editable
                 as='h2'
@@ -94,8 +108,13 @@ export const Sheet = () => {
               distance={monsterData.distance}
               level={monsterData.level}
             />
-            <HealthPoints healthpoints={monsterData.healthpoints} />
-            <Mugshot image={monsterData.mugshot && window.atob(monsterData.mugshot)} />
+            <HealthPoints
+              healthpoints={monsterData.healthpoints}
+              currentHp={monsterData.currentHealth}
+              setModalType={setModalType}
+              openModal={openModal}
+            />
+            <Mugshot monsterData={monsterData} onGetData={onGetData} />
           </Stats>
         </Container>
       )}

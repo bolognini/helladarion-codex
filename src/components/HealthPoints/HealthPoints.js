@@ -1,15 +1,23 @@
 import React from 'react'
 import { useHealthPoints } from './HealthPoints.hooks'
-import { Container, PointsWrapper, Description, Points, HealthBar, HealthControllers } from './HealthPoints.style'
+import {
+  Container,
+  PointsWrapper,
+  Description,
+  Points,
+  HealthBar,
+  HealthControllers
+} from './HealthPoints.style'
 
-export const HealthPoints = ({ healthpoints }) => {
+export const HealthPoints = ({ healthpoints, currentHp, setModalType, openModal }) => {
   const {
     currentHealth,
     removeOnePoint,
     removeTenPoints,
     addOnePoint,
-    addTenPoints
-  } = useHealthPoints({ healthpoints })
+    addTenPoints,
+    updateHealthPoints
+  } = useHealthPoints({ healthpoints, currentHp, setModalType, openModal })
 
   return (
     <Container>
@@ -24,7 +32,7 @@ export const HealthPoints = ({ healthpoints }) => {
       <HealthControllers>
         <button type='button' onClick={removeTenPoints}>-10</button>
         <button type='button' onClick={removeOnePoint}>-1</button>
-        <button type='button'>set</button>
+        <button type='button' onClick={updateHealthPoints}>set</button>
         <button type='button' onClick={addOnePoint}>+1</button>
         <button type='button' onClick={addTenPoints}>+10</button>
       </HealthControllers>

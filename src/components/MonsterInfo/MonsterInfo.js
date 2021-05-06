@@ -1,21 +1,37 @@
 import React from 'react'
 import ShieldIcon from 'assets/shield.svg'
 import BootIcon from 'assets/boot.svg'
-import { Container, Icon, Value, Description, Level } from './MonsterInfo.style'
+import { Editable } from 'components/Editable/Editable'
+import { Container, Icon, Description, Level } from './MonsterInfo.style'
 
 export const MonsterInfo = ({ defense, distance, level }) => (
   <Container>
     <Icon icon={ShieldIcon}>
-      <Value>{defense}</Value>
+      <Editable
+        as='p'
+        id='defense'
+        text={defense}
+        maxLength={3}
+      />
       <Description>Defesa</Description>
     </Icon>
     <Icon icon={BootIcon}>
-      <Value>{distance}</Value>
+      <Editable
+        as='p'
+        id='distance'
+        text={distance}
+        maxLength={3}
+      />
       <Description>Deslocamento</Description>
     </Icon>
     <Level>
       <span>ND </span>
-      <span>{level}</span>
+      <Editable
+        as='p'
+        id='level'
+        text={level}
+        maxLength={3}
+      />
     </Level>
   </Container>
 )

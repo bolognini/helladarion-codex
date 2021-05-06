@@ -1,20 +1,29 @@
 import React from 'react'
+import { useUpdateData } from 'hooks/useUpdateData'
+import { onGetQueryParams } from 'utils'
 import { Editable } from '../Editable/Editable'
 import { Button } from '../Button/Button'
 import { useHiddenAttacks } from './HiddenAttacks.hooks'
 import { Container, Content, Table, ButtonWrapper } from './HiddenAttacks.style'
 
-export const HiddenAttacks = ({ monsterData, closeModal }) => {
-  const monsterId = new URLSearchParams(window.location.search).get('id')
+export const HiddenAttacks = ({ monsterData, closeModal, onGetData }) => {
+  const id = onGetQueryParams()
   const {
     list,
+    onSaveAttacks,
     tableHeaders,
-    onAddInput,
-    onUpdateAttacks
+    onAddInput
   } = useHiddenAttacks({
-    monsterId,
+    id,
     monsterData,
     closeModal
+  })
+  const { onUpdateData } = useUpdateData({
+    monsterData,
+    key: 'attacks',
+    onSaveData: onSaveAttacks,
+    closeModal,
+    onGetData
   })
 
   return (
@@ -35,43 +44,43 @@ export const HiddenAttacks = ({ monsterData, closeModal }) => {
                 <Editable
                   as='td'
                   id={`attackName-${index}`}
-                  text={localStorage.getItem(`${monsterId}-attackName-${index}`) || attack.attackName}
+                  text={localStorage.getItem(`${id}-attackName-${index}`) || attack.attackName}
                   maxLength={16}
                 />
                 <Editable
                   as='td'
                   id={`attackBonus-${index}`}
-                  text={localStorage.getItem(`${monsterId}-attackBonus-${index}`) || attack.bonus}
+                  text={localStorage.getItem(`${id}-attackBonus-${index}`) || attack.bonus}
                   maxLength={9}
                 />
                 <Editable
                   as='td'
                   id={`attackDamage-${index}`}
-                  text={localStorage.getItem(`${monsterId}-attackDamage-${index}`) || attack.damage}
+                  text={localStorage.getItem(`${id}-attackDamage-${index}`) || attack.damage}
                   maxLength={9}
                 />
                 <Editable
                   as='td'
                   id={`attackCritic-${index}`}
-                  text={localStorage.getItem(`${monsterId}-attackCritic-${index}`) || attack.critic}
+                  text={localStorage.getItem(`${id}-attackCritic-${index}`) || attack.critic}
                   maxLength={9}
                 />
                 <Editable
                   as='td'
                   id={`attackType-${index}`}
-                  text={localStorage.getItem(`${monsterId}-attackType-${index}`) || attack.attType}
+                  text={localStorage.getItem(`${id}-attackType-${index}`) || attack.attType}
                   maxLength={9}
                 />
                 <Editable
                   as='td'
                   id={`attackRange-${index}`}
-                  text={localStorage.getItem(`${monsterId}-attackRange-${index}`) || attack.range}
+                  text={localStorage.getItem(`${id}-attackRange-${index}`) || attack.range}
                   maxLength={9}
                 />
                 <Editable
                   as='td'
                   id={`attackTest-${index}`}
-                  text={localStorage.getItem(`${monsterId}-attackTest-${index}`) || attack.test}
+                  text={localStorage.getItem(`${id}-attackTest-${index}`) || attack.test}
                   maxLength={10}
                 />
               </tr>
@@ -80,7 +89,7 @@ export const HiddenAttacks = ({ monsterData, closeModal }) => {
         </Table>
         <ButtonWrapper>
           <Button secondary text='Novo Ataque' onClick={onAddInput} />
-          <Button text='Salvar e fechar' onClick={onUpdateAttacks} />
+          <Button text='Salvar e fechar' onClick={onUpdateData} />
         </ButtonWrapper>
       </Content>
     </Container>

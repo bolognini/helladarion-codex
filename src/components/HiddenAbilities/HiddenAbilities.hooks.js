@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 
-export const useHiddenAbilities = ({ type, monsterId, monsterData, closeModal }) => {
+export const useHiddenAbilities = ({ type, id, monsterData }) => {
   const [list, setList] = useState([])
   const [typeKeys, setTypeKeys] = useState({})
 
   const onSaveAbilities = () => {
     const updatedAbilities = list.reduce((acc, cur, index) => {
-      const name = localStorage.getItem(`${monsterId}-${typeKeys.localStorageKey}-abilityName-${index}`)
-      const rolling = localStorage.getItem(`${monsterId}-${typeKeys.localStorageKey}-abilityRolling-${index}`)
+      const name = localStorage.getItem(`${id}-${typeKeys.localStorageKey}-abilityName-${index}`)
+      const rolling = localStorage.getItem(`${id}-${typeKeys.localStorageKey}-abilityRolling-${index}`)
 
       if (name === '' && rolling === '') return acc
 
@@ -21,15 +20,6 @@ export const useHiddenAbilities = ({ type, monsterId, monsterData, closeModal })
       }
     }, [])
     return Object.values(updatedAbilities)
-  }
-
-  const onUpdateAbilities = () => {
-    const updatedData = { ...monsterData, [type]: onSaveAbilities() }
-    axios
-      .put('https://helladarion.herokuapp.com/monster/update', updatedData)
-      .then(() => setList(onSaveAbilities()))
-      .then(closeModal)
-      .catch(error => console.error(error))
   }
 
   useEffect(() => {
@@ -60,6 +50,6 @@ export const useHiddenAbilities = ({ type, monsterId, monsterData, closeModal })
     list,
     typeKeys,
     onAddInput,
-    onUpdateAbilities
+    onSaveAbilities
   }
 }
