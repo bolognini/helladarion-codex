@@ -6,7 +6,8 @@ import {
   Editable,
   HealthPoints,
   MonsterInfo,
-  Mugshot
+  Mugshot,
+  ResponsiveFallback
 } from 'components'
 import { Separator, Loot, Notes, Diskette } from 'assets'
 import { useModal } from 'hooks/useModal'
@@ -30,6 +31,7 @@ export const Sheet = () => {
 
   return (
     <>
+      <ResponsiveFallback />
       {monsterData && (
         <Container>
           <Modal>

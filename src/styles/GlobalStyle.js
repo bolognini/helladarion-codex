@@ -24,6 +24,10 @@ const Styles = createGlobalStyle`
   }
 
   body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
     font-family: 'Vollkorn SC', serif;
     color: var(--black);
   }

@@ -12,6 +12,7 @@ import { Notes } from './Notes/Notes'
 import { HiddenAbilities } from './HiddenAbilities/HiddenAbilities'
 import { HiddenAttacks } from './HiddenAttacks/HiddenAttacks'
 import { HealthPointsModal } from './HealthPointsModal/HealthPointsModal'
+import { ResponsiveFallback } from './ResponsiveFallback/ResponsiveFallback'
 
 export {
   Abilities,
@@ -27,5 +28,6 @@ export {
   Notes,
   HiddenAbilities,
   HiddenAttacks,
-  HealthPointsModal
+  HealthPointsModal,
+  ResponsiveFallback
 }
