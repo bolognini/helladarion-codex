@@ -9,20 +9,19 @@ import {
   Mugshot,
   ResponsiveFallback
 } from 'components'
-import { Separator, Loot, Notes, Diskette } from 'assets'
+import { Separator, Diskette } from 'assets'
 import { useModal } from 'hooks/useModal'
 import { useSheet } from './Sheet.hooks'
 import {
   Container,
+  Content,
   Perks,
   Stats,
   NameWrapper,
   Name,
   SkillsWrapper,
   Skills,
-  AbilitiesWrapper,
-  Misc,
-  IconWrapper
+  AbilitiesWrapper
 } from './Sheet.style'
 
 export const Sheet = () => {
@@ -30,10 +29,10 @@ export const Sheet = () => {
   const { renderModal, setModalType, monsterData, onUpdateMonster, onGetData } = useSheet()
 
   return (
-    <>
+    <Container>
       <ResponsiveFallback />
       {monsterData && (
-        <Container>
+        <Content>
           <Modal>
             {renderModal({ closeModal })}
           </Modal>
@@ -46,7 +45,12 @@ export const Sheet = () => {
                   text={monsterData.name}
                   maxLength={25}
                 />
-                <Diskette onClick={onUpdateMonster} />
+                <Diskette
+                  onClick={() => {
+                    setModalType('save')
+                    openModal()
+                  }}
+                />
               </NameWrapper>
               <Separator />
               <Editable
@@ -58,7 +62,11 @@ export const Sheet = () => {
             </Name>
             <SkillsWrapper>
               <Skills>
-                <Attributes attributeList={monsterData.attributes} />
+                <Attributes
+                  attributeList={monsterData.attributes}
+                  setModalType={setModalType}
+                  openModal={openModal}
+                />
                 <AbilitiesWrapper>
                   <Abilities
                     title='Sentidos'
@@ -76,27 +84,6 @@ export const Sheet = () => {
                   />
                 </AbilitiesWrapper>
               </Skills>
-              <Misc>
-                <IconWrapper
-                  lootIcon
-                  onClick={() => {
-                    setModalType('loot')
-                    openModal()
-                  }}
-                >
-                  <Loot />
-                  <span>Tesouro</span>
-                </IconWrapper>
-                <IconWrapper
-                  onClick={() => {
-                    setModalType('notes')
-                    openModal()
-                  }}
-                >
-                  <Notes />
-                  <span>Anotações</span>
-                </IconWrapper>
-              </Misc>
             </SkillsWrapper>
             <Attacks
               attacksList={monsterData.attacks}
@@ -118,8 +105,8 @@ export const Sheet = () => {
             />
             <Mugshot monsterData={monsterData} onGetData={onGetData} />
           </Stats>
-        </Container>
+        </Content>
       )}
-    </>
+    </Container>
   )
 }

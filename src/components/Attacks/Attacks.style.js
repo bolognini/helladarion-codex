@@ -16,7 +16,6 @@ export const AttacksHeader = styled.div`
 
 export const Table = styled.table`
   background-color: var(--red);
-  margin-bottom: 16px;
   color: var(--yellow);
   width: 100%;
 

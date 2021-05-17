@@ -9,6 +9,7 @@ import { Mugshot } from './Mugshot/Mugshot'
 import { Modal } from './Modal/Modal'
 import { Loot } from './Loot/Loot'
 import { Notes } from './Notes/Notes'
+import { SaveModal } from './SaveModal/SaveModal'
 import { HiddenAbilities } from './HiddenAbilities/HiddenAbilities'
 import { HiddenAttacks } from './HiddenAttacks/HiddenAttacks'
 import { HealthPointsModal } from './HealthPointsModal/HealthPointsModal'
@@ -26,6 +27,7 @@ export {
   Modal,
   Loot,
   Notes,
+  SaveModal,
   HiddenAbilities,
   HiddenAttacks,
   HealthPointsModal,

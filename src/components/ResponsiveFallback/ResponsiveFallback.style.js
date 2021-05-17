@@ -33,6 +33,10 @@ export const Container = styled.div`
     }
   }
 
+  b {
+    font-weight: bold;
+  }
+
   a {
     text-decoration: none;
     color: var(--red);

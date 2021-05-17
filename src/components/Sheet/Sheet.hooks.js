@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { onLoadEditableElements, onSaveEditable, onGetQueryParams } from 'utils'
-import { Loot, Notes, HiddenAbilities, HiddenAttacks, HealthPointsModal } from 'components'
+import { Loot, Notes, SaveModal, HiddenAbilities, HiddenAttacks, HealthPointsModal } from 'components'
 import { SHEET_DATA } from './Sheet.mock'
 
 export const useSheet = () => {
@@ -50,42 +50,16 @@ export const useSheet = () => {
         return <Notes monsterData={data} closeModal={closeModal} onGetData={onGetData} />
       case 'healthpoints':
         return <HealthPointsModal monsterData={data} closeModal={closeModal} onGetData={onGetData} />
+      case 'save':
+        return <SaveModal monsterData={data} closeModal={closeModal} onGetData={onGetData} />
       default:
     }
-  }
-
-  const onUpdateMonster = () => {
-    const newData = Object.keys(localStorage).reduce((acc, cur) => {
-      if (cur.includes(`${id}-`)) {
-        const key = cur.replace(`${id}-`, '')
-        const value = localStorage.getItem(cur)
-
-        if (/(FOR|DES|CON|INT|SAB|CAR)/gm.test(key)) return acc
-
-        return {
-          ...acc,
-          [key]: value
-        }
-      }
-      return acc
-    }, {})
-
-    const attributeList = JSON.parse(localStorage.getItem('attributes')) || monsterData.attributes
-    const organizedData = { ...newData, attributes: [...attributeList] }
-    const updatedData = { ...monsterData, ...organizedData }
-
-    axios
-      .put('https://helladarion.herokuapp.com/monster/update', updatedData)
-      .then(() => localStorage.clear())
-      .then(onGetData)
-      .catch(error => console.error(error))
   }
 
   return {
     renderModal,
     setModalType,
     monsterData,
-    onUpdateMonster,
     onGetData
   }
 }

@@ -20,7 +20,6 @@ const Styles = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    outline: none;
   }
 
   body {
@@ -30,6 +29,7 @@ const Styles = createGlobalStyle`
     min-height: 100vh;
     font-family: 'Vollkorn SC', serif;
     color: var(--black);
+    background-color: var(--grey);
   }
 `
 
