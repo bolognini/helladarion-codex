@@ -26,7 +26,7 @@ import {
 
 export const Sheet = () => {
   const { openModal, closeModal, Modal } = useModal()
-  const { renderModal, setModalType, monsterData, onUpdateMonster, onGetData } = useSheet()
+  const { renderModal, setModalType, monsterData, onGetData } = useSheet()
 
   return (
     <Container>
