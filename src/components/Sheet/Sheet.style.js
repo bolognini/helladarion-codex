@@ -41,6 +41,11 @@ export const Name = styled.div`
     max-width: 834px;
     white-space: nowrap;
   }
+
+  h2 {
+    word-wrap: break-word;
+    max-width: 700px;
+  }
 `
 
 export const SkillsWrapper = styled.div`
