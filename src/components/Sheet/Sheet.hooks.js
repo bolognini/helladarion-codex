@@ -1,7 +1,15 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { onLoadEditableElements, onSaveEditable, onGetQueryParams } from 'utils'
-import { Loot, Notes, SaveModal, HiddenAbilities, HiddenAttacks, HealthPointsModal } from 'components'
+import {
+  Loot,
+  Notes,
+  SaveModal,
+  HiddenAbilities,
+  HiddenAttacks,
+  HealthPointsModal,
+  ManaPointsModal
+} from 'components'
 import { SHEET_DATA } from './Sheet.mock'
 
 export const useSheet = () => {
@@ -50,6 +58,8 @@ export const useSheet = () => {
         return <Notes monsterData={data} closeModal={closeModal} onGetData={onGetData} />
       case 'healthpoints':
         return <HealthPointsModal monsterData={data} closeModal={closeModal} onGetData={onGetData} />
+      case 'manapoints':
+        return <ManaPointsModal monsterData={data} closeModal={closeModal} onGetData={onGetData} />
       case 'save':
         return <SaveModal monsterData={data} closeModal={closeModal} onGetData={onGetData} />
       default:

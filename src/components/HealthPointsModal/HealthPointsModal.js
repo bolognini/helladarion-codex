@@ -16,19 +16,19 @@ export const HealthPointsModal = ({ monsterData, closeModal, onGetData }) => {
   return (
     <Container>
       <h2>— Pontos de Vida —</h2>
-      <label htmlFor='healthpoints'>
+      <label htmlFor='maxpoints'>
         Pontos de Vida Máximo
         <input
-          id='healthpoints'
+          id='maxpoints'
           type='number'
           defaultValue={monsterData.healthpoints}
           onChange={({ target: { value } }) => updateHealth({ value, type: 'healthpoints' })}
         />
       </label>
-      <label htmlFor='healthpoints'>
+      <label htmlFor='currentpoints'>
         Pontos de Vida Atuais
         <input
-          id='healthpoints'
+          id='currentpoints'
           type='number'
           defaultValue={currentHealth}
           onChange={({ target: { value } }) => updateHealth({ value, type: 'currentHealth' })}

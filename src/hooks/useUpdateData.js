@@ -23,8 +23,19 @@ export const useUpdateData = ({ monsterData, key, onSaveData, onGetData, closeMo
       .catch(error => console.error(error))
   }
 
+  const onUpdateManaPoints = ({ manapoints, currentMana }) => {
+    const updatedData = { ...monsterData, manapoints, currentMana }
+    axios
+      .put('https://helladarion.herokuapp.com/monster/update', updatedData)
+      .then(() => localStorage.removeItem(`${id}-currentMana`))
+      .then(onGetData)
+      .then(closeModal)
+      .catch(error => console.error(error))
+  }
+
   return {
     onUpdateData,
-    onUpdateHealthPoints
+    onUpdateHealthPoints,
+    onUpdateManaPoints
   }
 }

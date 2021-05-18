@@ -2,7 +2,7 @@ import { Abilities } from './Abilities/Abilities'
 import { Attacks } from './Attacks/Attacks'
 import { Attributes } from './Attributes/Attributes'
 import { Editable } from './Editable/Editable'
-import { HealthPoints } from './HealthPoints/HealthPoints'
+import { HealthAndMana } from './HealthAndMana/HealthAndMana'
 import { Indicator } from './Indicator/Indicator'
 import { MonsterInfo } from './MonsterInfo/MonsterInfo'
 import { Mugshot } from './Mugshot/Mugshot'
@@ -13,6 +13,7 @@ import { SaveModal } from './SaveModal/SaveModal'
 import { HiddenAbilities } from './HiddenAbilities/HiddenAbilities'
 import { HiddenAttacks } from './HiddenAttacks/HiddenAttacks'
 import { HealthPointsModal } from './HealthPointsModal/HealthPointsModal'
+import { ManaPointsModal } from './ManaPointsModal/ManaPointsModal'
 import { ResponsiveFallback } from './ResponsiveFallback/ResponsiveFallback'
 
 export {
@@ -20,7 +21,7 @@ export {
   Attacks,
   Attributes,
   Editable,
-  HealthPoints,
+  HealthAndMana,
   Indicator,
   MonsterInfo,
   Mugshot,
@@ -31,5 +32,6 @@ export {
   HiddenAbilities,
   HiddenAttacks,
   HealthPointsModal,
+  ManaPointsModal,
   ResponsiveFallback
 }

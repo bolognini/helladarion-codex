@@ -4,7 +4,7 @@ import {
   Attacks,
   Attributes,
   Editable,
-  HealthPoints,
+  HealthAndMana,
   MonsterInfo,
   Mugshot,
   ResponsiveFallback
@@ -17,8 +17,8 @@ import {
   Content,
   Perks,
   Stats,
-  NameWrapper,
   Name,
+  NameWrapper,
   SkillsWrapper,
   Skills,
   AbilitiesWrapper
@@ -42,7 +42,7 @@ export const Sheet = () => {
                 <Editable
                   as='h1'
                   id='name'
-                  text={monsterData.name}
+                  text={monsterData.name.slice(0, 25)}
                   maxLength={25}
                 />
                 <Diskette
@@ -97,9 +97,17 @@ export const Sheet = () => {
               distance={monsterData.distance}
               level={monsterData.level}
             />
-            <HealthPoints
-              healthpoints={monsterData.healthpoints}
-              currentHp={monsterData.currentHealth}
+            <HealthAndMana
+              type='health'
+              points={monsterData.healthpoints}
+              current={monsterData.currentHealth}
+              setModalType={setModalType}
+              openModal={openModal}
+            />
+            <HealthAndMana
+              type='mana'
+              points={monsterData.manapoints}
+              current={monsterData.currentMana}
               setModalType={setModalType}
               openModal={openModal}
             />
