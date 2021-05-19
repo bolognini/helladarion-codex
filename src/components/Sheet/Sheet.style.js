@@ -7,6 +7,7 @@ export const Container = styled.section`
   place-content: center;
   align-items: center;
   margin: 0 auto;
+  padding: 24px;
 `
 
 export const Content = styled.div`
@@ -16,7 +17,6 @@ export const Content = styled.div`
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 48px;
-    padding: 24px;
   }
 `
 
