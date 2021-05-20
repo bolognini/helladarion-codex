@@ -32,7 +32,7 @@ export const NameWrapper = styled.div`
 `
 
 export const Name = styled.div`
-  margin-bottom: 36px;
+  margin-bottom: 16px;
 
   h1 {
     font-size: 56px;
@@ -44,7 +44,18 @@ export const Name = styled.div`
 
   h2 {
     word-wrap: break-word;
-    max-width: 700px;
+    max-width: 850px;
+  }
+`
+
+export const Details = styled.div`
+  display: flex;
+  grid-column-gap: 8px;
+  font-size: 16px;
+  margin-bottom: 16px;
+
+  span {
+    color: var(--red);
   }
 `
 

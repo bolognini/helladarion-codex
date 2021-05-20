@@ -4,7 +4,7 @@ import BootIcon from 'assets/boot.svg'
 import { Editable } from 'components/Editable/Editable'
 import { Container, Icon, Description, Level } from './MonsterInfo.style'
 
-export const MonsterInfo = ({ defense, distance, level }) => (
+export const MonsterInfo = ({ defense, distance, challengeLevel }) => (
   <Container>
     <Icon icon={ShieldIcon}>
       <Editable
@@ -28,8 +28,8 @@ export const MonsterInfo = ({ defense, distance, level }) => (
       <span>ND </span>
       <Editable
         as='p'
-        id='level'
-        text={level}
+        id='challengeLevel'
+        text={challengeLevel}
         maxLength={3}
       />
     </Level>

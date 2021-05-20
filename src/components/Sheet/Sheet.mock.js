@@ -1,10 +1,14 @@
 export const SHEET_DATA = {
   name: 'Monstro Genérico',
   description: `'É tão genérico que nem deram um nome'. - Geraldo, o caçador do bairro`,
-  level: '2',
+  monsterType: 'Monstro',
+  size: 'Gigante',
+  level: 2,
+  challengeLevel: 3,
   defense: '10',
   distance: '5',
   healthpoints: 20,
+  manapoints: 10,
   treasury: 'Tesouros encontrados...',
   notes: 'Anotações Gerais...',
   attributes: [

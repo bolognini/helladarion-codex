@@ -19,6 +19,7 @@ import {
   Stats,
   Name,
   NameWrapper,
+  Details,
   SkillsWrapper,
   Skills,
   AbilitiesWrapper
@@ -53,6 +54,26 @@ export const Sheet = () => {
                 />
               </NameWrapper>
               <Separator />
+              <Details>
+                <Editable
+                  as='span'
+                  id='monsterType'
+                  text={monsterData.monsterType}
+                  maxLength={13}
+                />
+                <Editable
+                  as='span'
+                  id='nivel'
+                  text={`${monsterData.level}, `}
+                  maxLength={3}
+                />
+                <Editable
+                  as='span'
+                  id='size'
+                  text={monsterData.size}
+                  maxLength={12}
+                />
+              </Details>
               <Editable
                 as='h2'
                 id='description'
@@ -95,7 +116,7 @@ export const Sheet = () => {
             <MonsterInfo
               defense={monsterData.defense}
               distance={monsterData.distance}
-              level={monsterData.level}
+              challengeLevel={monsterData.challengeLevel}
             />
             <HealthAndMana
               type='health'
