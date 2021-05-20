@@ -5,5 +5,5 @@ export const tableHeaders = [
   'Crítico',
   'Tipo',
   'Alcance',
-  'Teste'
+  'Teste Oposto'
 ]

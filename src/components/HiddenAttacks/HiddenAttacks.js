@@ -45,7 +45,7 @@ export const HiddenAttacks = ({ monsterData, closeModal, onGetData }) => {
                   as='td'
                   id={`attackName-${index}`}
                   text={localStorage.getItem(`${id}-attackName-${index}`) || attack.attackName}
-                  maxLength={16}
+                  maxLength={20}
                 />
                 <Editable
                   as='td'
@@ -81,7 +81,7 @@ export const HiddenAttacks = ({ monsterData, closeModal, onGetData }) => {
                   as='td'
                   id={`attackTest-${index}`}
                   text={localStorage.getItem(`${id}-attackTest-${index}`) || attack.test}
-                  maxLength={10}
+                  maxLength={20}
                 />
               </tr>
             ))}

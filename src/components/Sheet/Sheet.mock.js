@@ -57,7 +57,7 @@ export const SHEET_DATA = {
       rolling: ''
     }
   ],
-  resistances: [
+  skills: [
     {
       name: 'Fortitude +2',
       rolling: 'D20 + 4'

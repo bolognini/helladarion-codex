@@ -46,7 +46,7 @@ export const HiddenAbilities = ({ type, monsterData, closeModal, onGetData }) =>
                     `${id}-${typeKeys.localStorageKey}-abilityName-${index}`
                   ) || ability.name
                 }
-                maxLength={18}
+                maxLength={20}
               />
               <Editable
                 as='span'
@@ -56,7 +56,7 @@ export const HiddenAbilities = ({ type, monsterData, closeModal, onGetData }) =>
                     `${id}-${typeKeys.localStorageKey}-abilityRolling-${index}`
                   ) || ability.rolling
                 }
-                maxLength={16}
+                maxLength={20}
               />
             </li>
           ))}

@@ -33,10 +33,10 @@ export const useHiddenAbilities = ({ type, id, monsterData }) => {
       })
     } else {
       setTypeKeys({
-        localStorageKey: 'Resistências',
-        newName: '[Nova Resistência]',
-        title: '— Todas as Resistências —',
-        buttonText: 'Nova Resistência'
+        localStorageKey: 'Perícia',
+        newName: '[Nova Perícia]',
+        title: '— Todas as Perícia —',
+        buttonText: 'Nova Perícia'
       })
     }
   }, [])

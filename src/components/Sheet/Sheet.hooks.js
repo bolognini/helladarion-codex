@@ -48,8 +48,8 @@ export const useSheet = () => {
     switch (modalType) {
       case 'senses':
         return <HiddenAbilities type='senses' monsterData={data} closeModal={closeModal} onGetData={onGetData} />
-      case 'resistances':
-        return <HiddenAbilities type='resistances' monsterData={data} closeModal={closeModal} onGetData={onGetData} />
+      case 'skills':
+        return <HiddenAbilities type='skills' monsterData={data} closeModal={closeModal} onGetData={onGetData} />
       case 'attacks':
         return <HiddenAttacks monsterData={data} closeModal={closeModal} onGetData={onGetData} />
       case 'loot':
