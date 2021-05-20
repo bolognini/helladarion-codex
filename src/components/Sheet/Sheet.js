@@ -63,7 +63,7 @@ export const Sheet = () => {
                 />
                 <Editable
                   as='span'
-                  id='nivel'
+                  id='level'
                   text={`${monsterData.level}, `}
                   maxLength={3}
                 />
