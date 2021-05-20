@@ -1,7 +1,9 @@
 export const tableHeaders = [
   '',
-  'Bônus',
+  'Ação',
+  'Mana',
   'Dano',
+  'Bônus',
   'Crítico',
   'Tipo',
   'Alcance',

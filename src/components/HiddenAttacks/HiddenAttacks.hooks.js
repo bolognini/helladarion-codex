@@ -4,8 +4,10 @@ export const useHiddenAttacks = ({ id, monsterData }) => {
   const [list, setList] = useState([])
   const tableHeaders = [
     '',
-    'Bônus',
+    'Ação',
+    'Mana',
     'Dano',
+    'Bônus',
     'Crítico',
     'Tipo',
     'Alcance',
@@ -15,6 +17,8 @@ export const useHiddenAttacks = ({ id, monsterData }) => {
   const onSaveAttacks = () => {
     const updatedAttacks = list.reduce((acc, cur, index) => {
       const name = localStorage.getItem(`${id}-attackName-${index}`)
+      const action = localStorage.getItem(`${id}-attackAction-${index}`)
+      const manaCost = localStorage.getItem(`${id}-attackManaCost-${index}`)
       const damage = localStorage.getItem(`${id}-attackDamage-${index}`)
       const bonus = localStorage.getItem(`${id}-attackBonus-${index}`)
       const test = localStorage.getItem(`${id}-attackTest-${index}`)
@@ -31,6 +35,8 @@ export const useHiddenAttacks = ({ id, monsterData }) => {
         ...acc,
         [index]: {
           attackName: name || cur.attackName,
+          action: action || cur.attackAction,
+          manaCost: manaCost || cur.attackManaCost,
           damage: damage || cur.damage,
           bonus: bonus || cur.bonus,
           test: test || cur.test,

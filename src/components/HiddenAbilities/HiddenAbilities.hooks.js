@@ -35,7 +35,7 @@ export const useHiddenAbilities = ({ type, id, monsterData }) => {
       setTypeKeys({
         localStorageKey: 'Perícia',
         newName: '[Nova Perícia]',
-        title: '— Todas as Perícia —',
+        title: '— Todas as Perícias —',
         buttonText: 'Nova Perícia'
       })
     }

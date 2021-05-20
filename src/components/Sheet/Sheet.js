@@ -97,7 +97,7 @@ export const Sheet = () => {
                     setModalType={setModalType}
                   />
                   <Abilities
-                    title='Perícia'
+                    title='Perícias'
                     modalType='skills'
                     abilitiesList={monsterData.skills}
                     openModal={openModal}

@@ -36,8 +36,10 @@ export const Attacks = ({ attacksList, setModalType, openModal }) => {
             return (
               <tr key={`attackName-${index}`}>
                 <td id={`attackName-${index}`}>{attack.attackName}</td>
-                <td id={`attackBonus-${index}`}>{attack.bonus}</td>
+                <td id={`attackAction-${index}`}>{attack.action}</td>
+                <td id={`attackManaCost-${index}`}>{attack.manaCost}</td>
                 <td id={`attackDamage-${index}`}>{attack.damage}</td>
+                <td id={`attackBonus-${index}`}>{attack.bonus}</td>
                 <td id={`attackCritic-${index}`}>{attack.critic}</td>
                 <td id={`attackType-${index}`}>{attack.attType}</td>
                 <td id={`attackRange-${index}`}>{attack.range}</td>

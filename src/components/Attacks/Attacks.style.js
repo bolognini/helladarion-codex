@@ -21,6 +21,10 @@ export const Table = styled.table`
 
   thead {
     border-bottom: 1px solid var(--grey);
+
+    th {
+      font-size: 16px;
+    }
   }
 
   td:first-child {
@@ -33,6 +37,7 @@ export const Table = styled.table`
   td {
     text-align: center;
     padding: 8px 0;
+    font-size: 14px;
   }
 `
 

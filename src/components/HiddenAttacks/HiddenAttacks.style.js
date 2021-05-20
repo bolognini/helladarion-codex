@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 600px;
+  width: 900px;
   height: 350px;
 
   h2 {
@@ -37,7 +37,7 @@ export const Table = styled.table`
 
   tr {
     display: grid;
-    grid-template-columns: 2fr repeat(6, 1fr);
+    grid-template-columns: 2fr repeat(8, 1fr);
     padding-right: 16px;
   }
 

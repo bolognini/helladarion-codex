@@ -87,7 +87,9 @@ export const SHEET_DATA = {
       critic: '2x',
       attType: 'Perfurante',
       range: '1m',
-      test: 'Luta'
+      test: 'Luta',
+      action: 'Padrão',
+      manaCost: '-'
     },
     {
       attackName: 'Derrubar',
@@ -96,7 +98,9 @@ export const SHEET_DATA = {
       critic: '',
       attType: '',
       range: '',
-      test: 'Livre'
+      test: 'Livre',
+      action: 'Livre',
+      manaCost: '-'
     },
     {
       attackName: 'Veneno',
@@ -105,7 +109,9 @@ export const SHEET_DATA = {
       critic: '',
       attType: '',
       range: '',
-      test: 'Oposto 22'
+      test: 'Oposto 22',
+      action: 'Padrão',
+      manaCost: '1 PM'
     },
     {
       attackName: 'Espada Longa +13',
@@ -114,7 +120,9 @@ export const SHEET_DATA = {
       critic: '19',
       attType: 'Cortante',
       range: '1m',
-      test: 'Oposto'
+      test: 'Oposto',
+      action: 'Padrão',
+      manaCost: '-'
     },
     {
       attackName: 'Arroto Gelado',
@@ -123,7 +131,9 @@ export const SHEET_DATA = {
       critic: '',
       attType: 'Frio',
       range: '',
-      test: 'Oposto'
+      test: 'Oposto',
+      action: 'Padrão',
+      manaCost: '3 PM'
     }
   ]
 }
