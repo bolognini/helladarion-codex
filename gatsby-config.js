@@ -43,8 +43,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Tormenta20 Bestiary`,
-        short_name: `T20 Bestiary`,
+        name: `Helladarion Codex`,
+        short_name: `Helladarion Codex`,
         start_url: `/`,
         background_color: `#B52931`,
         theme_color: `#F9D078`,
