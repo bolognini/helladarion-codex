@@ -1,8 +1,8 @@
 {
   "name": "helldarion-codex",
   "private": true,
-  "description": "A simplified monster builder for Tormenta20 RPG system",
-  "version": "0.1.0",
+  "description": "A virtual enemy sheet for Tormenta20 RPG system",
+  "version": "1.0.0",
   "scripts": {
     "build": "gatsby build",
     "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
