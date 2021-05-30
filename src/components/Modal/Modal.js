@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { useCloseModal } from 'hooks/useCloseModal'
-import { Overlay, Container } from './Modal.styled'
+import { Overlay, Container, CloseIcon } from './Modal.styled'
 
 export const Modal = ({ onClose, children }) => {
   const ref = useRef()
@@ -10,6 +10,7 @@ export const Modal = ({ onClose, children }) => {
   return (
     <Overlay>
       <Container ref={ref}>
+        <CloseIcon onClick={onClose}>✕</CloseIcon>
         <aside>
           {children}
         </aside>
