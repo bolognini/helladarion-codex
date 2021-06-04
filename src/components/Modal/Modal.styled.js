@@ -19,4 +19,12 @@ export const Container = styled.div`
   background: var(--grey);
   padding: 34px;
   z-index: 1;
+  position: relative;
+`
+
+export const CloseIcon = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
 `
