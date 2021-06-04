@@ -56,7 +56,7 @@ export const HiddenAttacks = ({ monsterData, closeModal, onGetData }) => {
                 <Editable
                   as='td'
                   id={`attackManaCost-${index}`}
-                  text={localStorage.getItem(`${id}-attackName-${index}`) || attack.manaCost}
+                  text={localStorage.getItem(`${id}-attackManaCost-${index}`) || attack.manaCost}
                   maxLength={5}
                 />
                 <Editable

@@ -26,7 +26,7 @@ export const useHiddenAttacks = ({ id, monsterData }) => {
       const range = localStorage.getItem(`${id}-attackRange-${index}`)
       const type = localStorage.getItem(`${id}-attackType-${index}`)
 
-      const attackFields = [name, damage, bonus, test, critic, range, type]
+      const attackFields = [action, manaCost, name, damage, bonus, test, critic, range, type]
       const emptyAttack = attackFields.every(field => field === '')
 
       if (emptyAttack) return acc
@@ -35,8 +35,8 @@ export const useHiddenAttacks = ({ id, monsterData }) => {
         ...acc,
         [index]: {
           attackName: name || cur.attackName,
-          action: action || cur.attackAction,
-          manaCost: manaCost || cur.attackManaCost,
+          action: action || cur.action,
+          manaCost: manaCost || cur.manaCost,
           damage: damage || cur.damage,
           bonus: bonus || cur.bonus,
           test: test || cur.test,
