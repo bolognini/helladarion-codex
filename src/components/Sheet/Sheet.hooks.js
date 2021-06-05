@@ -4,6 +4,7 @@ import { onLoadEditableElements, onSaveEditable, onGetQueryParams } from 'utils'
 import {
   Loot,
   Notes,
+  Greetings,
   SaveModal,
   HiddenAbilities,
   HiddenAttacks,
@@ -12,7 +13,7 @@ import {
 } from 'components'
 import { SHEET_DATA } from './Sheet.mock'
 
-export const useSheet = () => {
+export const useSheet = ({ openModal }) => {
   const [modalType, setModalType] = useState(null)
   const [monsterData, setMonsterData] = useState(null)
   const id = onGetQueryParams()
@@ -30,6 +31,13 @@ export const useSheet = () => {
   }
 
   useEffect(() => {
+    const isFirstAccess = !localStorage.getItem('isFirstAccess')
+
+    if (isFirstAccess) {
+      setModalType('greetings')
+      openModal()
+    }
+
     if (id) {
       onGetData({ id })
     } else {
@@ -46,6 +54,8 @@ export const useSheet = () => {
   const renderModal = ({ closeModal }) => {
     const data = monsterData && monsterData
     switch (modalType) {
+      case 'greetings':
+        return <Greetings closeModal={closeModal} />
       case 'senses':
         return <HiddenAbilities type='senses' monsterData={data} closeModal={closeModal} onGetData={onGetData} />
       case 'skills':

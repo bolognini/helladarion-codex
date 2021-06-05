@@ -23,7 +23,10 @@ export const useSaveModal = ({ id, monsterData, onGetData, closeModal }) => {
 
     axios
       .put('https://helladarion.herokuapp.com/monster/update', updatedData)
-      .then(() => localStorage.clear())
+      .then(() => {
+        localStorage.clear()
+        localStorage.setItem('isFirstAccess', false)
+      })
       .then(onGetData)
       .then(closeModal)
       .catch(error => console.error(error))
