@@ -35,6 +35,7 @@ module.exports = {
       options: {
         fonts: [
           `Vollkorn SC`,
+          `Vollkorn`,
           `400,600,700,900`
         ],
         display: 'swap'

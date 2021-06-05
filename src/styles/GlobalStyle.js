@@ -20,6 +20,11 @@ const Styles = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+
+    &::selection {
+      background: var(--yellow);
+      color: var(--black);
+    }
   }
 
   body {
@@ -30,6 +35,11 @@ const Styles = createGlobalStyle`
     font-family: 'Vollkorn SC', serif;
     color: var(--black);
     background-color: var(--grey);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--red);
   }
 `
 

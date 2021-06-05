@@ -19,6 +19,8 @@ import {
   Stats,
   Name,
   NameWrapper,
+  HeaderIcons,
+  About,
   Details,
   SkillsWrapper,
   Skills,
@@ -27,7 +29,7 @@ import {
 
 export const Sheet = () => {
   const { openModal, closeModal, Modal } = useModal()
-  const { renderModal, setModalType, monsterData, onGetData } = useSheet()
+  const { renderModal, setModalType, monsterData, onGetData } = useSheet({ openModal })
 
   return (
     <Container>
@@ -46,12 +48,23 @@ export const Sheet = () => {
                   text={monsterData.name.slice(0, 25)}
                   maxLength={25}
                 />
-                <Diskette
-                  onClick={() => {
-                    setModalType('save')
-                    openModal()
-                  }}
-                />
+                <HeaderIcons>
+                  <About
+                    type='button'
+                    onClick={() => {
+                      setModalType('greetings')
+                      openModal()
+                    }}
+                  >
+                    ?
+                  </About>
+                  <Diskette
+                    onClick={() => {
+                      setModalType('save')
+                      openModal()
+                    }}
+                  />
+                </HeaderIcons>
               </NameWrapper>
               <Separator />
               <Details>

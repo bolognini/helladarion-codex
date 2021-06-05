@@ -9,6 +9,7 @@ import { Mugshot } from './Mugshot/Mugshot'
 import { Modal } from './Modal/Modal'
 import { Loot } from './Loot/Loot'
 import { Notes } from './Notes/Notes'
+import { Greetings } from './Greetings/Greetings'
 import { SaveModal } from './SaveModal/SaveModal'
 import { HiddenAbilities } from './HiddenAbilities/HiddenAbilities'
 import { HiddenAttacks } from './HiddenAttacks/HiddenAttacks'
@@ -28,6 +29,7 @@ export {
   Modal,
   Loot,
   Notes,
+  Greetings,
   SaveModal,
   HiddenAbilities,
   HiddenAttacks,

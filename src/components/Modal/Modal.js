@@ -10,10 +10,15 @@ export const Modal = ({ onClose, children }) => {
   return (
     <Overlay>
       <Container ref={ref}>
-        <CloseIcon onClick={onClose}>✕</CloseIcon>
-        <aside>
-          {children}
-        </aside>
+        <CloseIcon
+          onClick={() => {
+            localStorage.setItem('isFirstAccess', false)
+            onClose()
+          }}
+        >
+          ✕
+        </CloseIcon>
+        <aside>{children}</aside>
       </Container>
     </Overlay>
   )

@@ -31,6 +31,21 @@ export const NameWrapper = styled.div`
   }
 `
 
+export const HeaderIcons = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const About = styled.button`
+  border: 2px solid var(--red);
+  background: var(--red);
+  font-size: 28px;
+  margin-right: 16px;
+  padding: 0 10px;
+  color: var(--grey);
+  cursor: pointer;
+`
+
 export const Name = styled.div`
   margin-bottom: 16px;
 
